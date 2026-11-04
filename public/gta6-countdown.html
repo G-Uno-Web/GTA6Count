@@ -1,684 +1,1884 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GTA6 全球解锁倒计时 · 全时区对照表 | 2026.11.19</title>
-<meta name="description" content="GTA VI 2026年11月19日发售，全球各时区解锁时间相差18小时。自动识别你的时区并实时倒计时，附新西兰、日本、中国香港、欧洲、美区完整解锁时间对照表，以及预载时间、210GB 容量与 PC 版答疑。">
-<meta name="keywords" content="GTA6 解锁时间, GTA VI 几点解锁, GTA6 发售时间, GTA6 时区, GTA6 预载, GTA6 PC版, GTA 6 release time, GTA VI unlock timezone">
-<meta name="theme-color" content="#0b0716">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GTA6 全球解锁倒计时 · 全时区对照表">
-<meta property="og:description" content="自动识别你的时区，实时倒计时到 GTA VI 在你所在地区的解锁时刻。全球相差 18 小时。">
-<meta property="og:locale" content="zh_CN">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "GTA6 什么时候解锁？",
-      "acceptedAnswer": { "@type": "Answer", "text": "《GTA VI》定于 2026 年 11 月 19 日发售，登陆 PS5 与 Xbox Series X|S。官方按各区本地时间 0 点解锁，因此全球最早为新西兰（北京时间 11 月 18 日 19:00），最晚为美区（北京时间 11 月 19 日 13:00），前后相差 18 小时。" }
-    },
-    {
-      "@type": "Question",
-      "name": "GTA6 有 PC 版吗？",
-      "acceptedAnswer": { "@type": "Answer", "text": "首发没有 PC 版。官方目前只公布了 PS5 与 Xbox Series X|S，未公布 PC 版发售日期与配置要求。参考 GTA5（主机到 PC 间隔 19 个月）与荒野大镖客 2（13 个月），PC 版普遍预期在 2027 年，但 Rockstar 尚未确认。云串流也不可行，Xbox 已否认 PC 独占云串流安排。" }
-    },
-    {
-      "@type": "Question",
-      "name": "GTA6 什么时候可以预载？需要多大空间？",
-      "acceptedAnswer": { "@type": "Answer", "text": "数字版预载自 2026 年 11 月 12 日 0 点（各区本地时间）开放，但下载的是加密文件，19 日解锁前无法进入游戏。PS5 版下载体积约 210GB，PS5 Slim 可用空间约 840GB，建议提前清理空间或加装 M.2 SSD。实体版盒内为兑换码，不是光盘。" }
-    },
-    {
-      "@type": "Question",
-      "name": "中国大陆几点能玩 GTA6？",
-      "acceptedAnswer": { "@type": "Answer", "text": "中国大陆暂无官方发行。中文玩家常用的中国香港商店按当地时间 11 月 19 日 0 点解锁，与北京时间一致，即 2026 年 11 月 19 日 00:00。" }
-    }
-  ]
-}
-</script>
-<style>
-  :root{
-    --bg:#0b0716;
-    --panel:rgba(255,255,255,.045);
-    --panel-strong:rgba(255,255,255,.072);
-    --line:rgba(255,255,255,.11);
-    --line-soft:rgba(255,255,255,.07);
-    --text:#f6f2ff;
-    --muted:#a99fc4;
-    --muted2:#7c729a;
-    --pink:#ff3d81;
-    --orange:#ff9a4d;
-    --cyan:#3fd8ff;
-    --violet:#8b6bff;
-    --ok:#54e0a8;
-    --radius:20px;
-    --mono:"SF Mono",ui-monospace,"Cascadia Mono","JetBrains Mono",Consolas,"Liberation Mono",monospace;
-    --sans:"Inter","Segoe UI",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family:var(--sans);
-    color:var(--text);
-    background:var(--bg);
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  /* ---------- background ---------- */
-  .bg{position:fixed;inset:0;z-index:-2;pointer-events:none;
-    background:
-      radial-gradient(900px 620px at 12% -5%, rgba(139,107,255,.30), transparent 62%),
-      radial-gradient(760px 560px at 92% 8%, rgba(255,61,129,.24), transparent 62%),
-      radial-gradient(700px 620px at 72% 100%, rgba(63,216,255,.10), transparent 65%),
-      linear-gradient(180deg,#0b0716 0%,#120b22 48%,#0a0714 100%);
-  }
-  .bg::after{content:"";position:absolute;inset:0;opacity:.32;
-    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-    background-size:56px 56px;
-    mask-image:linear-gradient(180deg,#000 0%,transparent 82%);
-    -webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 82%);
-  }
-  .orb{position:fixed;border-radius:50%;filter:blur(90px);z-index:-1;pointer-events:none;opacity:.5;animation:float 18s ease-in-out infinite alternate}
-  .orb.a{width:380px;height:380px;top:6%;left:-9%;background:rgba(255,61,129,.30)}
-  .orb.b{width:320px;height:320px;top:38%;right:-8%;background:rgba(139,107,255,.28);animation-delay:-7s}
-  .orb.c{width:280px;height:280px;bottom:-6%;left:38%;background:rgba(63,216,255,.16);animation-delay:-12s}
-  @keyframes float{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(24px,-32px,0) scale(1.12)}}
-  @keyframes pulse{50%{opacity:.35}}
-  @media (prefers-reduced-motion:reduce){.orb{animation:none}}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GTA6 全球解锁倒计时 · 全时区对照表 | 2026.11.19</title>
+    <meta
+      name="description"
+      content="GTA VI 2026年11月19日发售，全球各时区解锁时间相差18小时。自动识别你的时区并实时倒计时，附新西兰、日本、中国香港、欧洲、美区完整解锁时间对照表，以及预载时间、210GB 容量与 PC 版答疑。"
+    />
+    <meta
+      name="keywords"
+      content="GTA6 解锁时间, GTA VI 几点解锁, GTA6 发售时间, GTA6 时区, GTA6 预载, GTA6 PC版, GTA 6 release time, GTA VI unlock timezone"
+    />
+    <meta name="theme-color" content="#0b0716" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GTA6 全球解锁倒计时 · 全时区对照表" />
+    <meta
+      property="og:description"
+      content="自动识别你的时区，实时倒计时到 GTA VI 在你所在地区的解锁时刻。全球相差 18 小时。"
+    />
+    <meta property="og:locale" content="zh_CN" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "GTA6 什么时候解锁？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "《GTA VI》定于 2026 年 11 月 19 日发售，登陆 PS5 与 Xbox Series X|S。官方按各区本地时间 0 点解锁，因此全球最早为新西兰（北京时间 11 月 18 日 19:00），最晚为美区（北京时间 11 月 19 日 13:00），前后相差 18 小时。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "GTA6 有 PC 版吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "首发没有 PC 版。官方目前只公布了 PS5 与 Xbox Series X|S，未公布 PC 版发售日期与配置要求。参考 GTA5（主机到 PC 间隔 19 个月）与荒野大镖客 2（13 个月），PC 版普遍预期在 2027 年，但 Rockstar 尚未确认。云串流也不可行，Xbox 已否认 PC 独占云串流安排。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "GTA6 什么时候可以预载？需要多大空间？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "数字版预载自 2026 年 11 月 12 日 0 点（各区本地时间）开放，但下载的是加密文件，19 日解锁前无法进入游戏。PS5 版下载体积约 210GB，PS5 Slim 可用空间约 840GB，建议提前清理空间或加装 M.2 SSD。实体版盒内为兑换码，不是光盘。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "中国大陆几点能玩 GTA6？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "中国大陆暂无官方发行。中文玩家常用的中国香港商店按当地时间 11 月 19 日 0 点解锁，与北京时间一致，即 2026 年 11 月 19 日 00:00。"
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      :root {
+        --bg: #0b0716;
+        --panel: rgba(255, 255, 255, 0.045);
+        --panel-strong: rgba(255, 255, 255, 0.072);
+        --line: rgba(255, 255, 255, 0.11);
+        --line-soft: rgba(255, 255, 255, 0.07);
+        --text: #f6f2ff;
+        --muted: #a99fc4;
+        --muted2: #7c729a;
+        --pink: #ff3d81;
+        --orange: #ff9a4d;
+        --cyan: #3fd8ff;
+        --violet: #8b6bff;
+        --ok: #54e0a8;
+        --radius: 20px;
+        --mono:
+          "SF Mono", ui-monospace, "Cascadia Mono", "JetBrains Mono", Consolas,
+          "Liberation Mono", monospace;
+        --sans:
+          "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "PingFang SC",
+          "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      /* ---------- background ---------- */
+      .bg {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            900px 620px at 12% -5%,
+            rgba(139, 107, 255, 0.3),
+            transparent 62%
+          ),
+          radial-gradient(
+            760px 560px at 92% 8%,
+            rgba(255, 61, 129, 0.24),
+            transparent 62%
+          ),
+          radial-gradient(
+            700px 620px at 72% 100%,
+            rgba(63, 216, 255, 0.1),
+            transparent 65%
+          ),
+          linear-gradient(180deg, #0b0716 0%, #120b22 48%, #0a0714 100%);
+      }
+      .bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.32;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.045) 1px,
+            transparent 1px
+          );
+        background-size: 56px 56px;
+        mask-image: linear-gradient(180deg, #000 0%, transparent 82%);
+        -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 82%);
+      }
+      .orb {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(90px);
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.5;
+        animation: float 18s ease-in-out infinite alternate;
+      }
+      .orb.a {
+        width: 380px;
+        height: 380px;
+        top: 6%;
+        left: -9%;
+        background: rgba(255, 61, 129, 0.3);
+      }
+      .orb.b {
+        width: 320px;
+        height: 320px;
+        top: 38%;
+        right: -8%;
+        background: rgba(139, 107, 255, 0.28);
+        animation-delay: -7s;
+      }
+      .orb.c {
+        width: 280px;
+        height: 280px;
+        bottom: -6%;
+        left: 38%;
+        background: rgba(63, 216, 255, 0.16);
+        animation-delay: -12s;
+      }
+      @keyframes float {
+        from {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        to {
+          transform: translate3d(24px, -32px, 0) scale(1.12);
+        }
+      }
+      @keyframes pulse {
+        50% {
+          opacity: 0.35;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .orb {
+          animation: none;
+        }
+      }
 
-  /* ---------- layout ---------- */
-  .wrap{width:min(1100px,92vw);margin:0 auto}
-  header.site{padding:26px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-  .brand .mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-weight:900;font-size:15px;letter-spacing:-1px;
-    background:linear-gradient(135deg,var(--pink),var(--orange));color:#150a1e;box-shadow:0 8px 26px rgba(255,61,129,.36)}
-  .brand .txt{font-weight:800;font-size:15px;letter-spacing:.02em}
-  .brand .txt small{display:block;font-weight:500;font-size:11px;color:var(--muted2);letter-spacing:.14em;margin-top:2px}
-  nav.links{display:flex;gap:6px;flex-wrap:wrap}
-  nav.links a{color:var(--muted);text-decoration:none;font-size:13px;padding:8px 13px;border-radius:9px;transition:.2s}
-  nav.links a:hover{color:var(--text);background:var(--panel)}
+      /* ---------- layout ---------- */
+      .wrap {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+      }
+      header.site {
+        padding: 26px 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: inherit;
+      }
+      .brand .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        font-size: 15px;
+        letter-spacing: -1px;
+        background: linear-gradient(135deg, var(--pink), var(--orange));
+        color: #150a1e;
+        box-shadow: 0 8px 26px rgba(255, 61, 129, 0.36);
+      }
+      .brand .txt {
+        font-weight: 800;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+      }
+      .brand .txt small {
+        display: block;
+        font-weight: 500;
+        font-size: 11px;
+        color: var(--muted2);
+        letter-spacing: 0.14em;
+        margin-top: 2px;
+      }
+      nav.links {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      nav.links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 13px;
+        padding: 8px 13px;
+        border-radius: 9px;
+        transition: 0.2s;
+      }
+      nav.links a:hover {
+        color: var(--text);
+        background: var(--panel);
+      }
 
-  /* ---------- hero ---------- */
-  .hero{padding:58px 0 26px;text-align:center}
-  .kicker{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.22em;font-weight:700;color:var(--cyan);
-    border:1px solid rgba(63,216,255,.28);background:rgba(63,216,255,.07);padding:8px 16px;border-radius:100px;text-transform:uppercase}
-  .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:pulse 2s infinite}
-  h1{margin:24px 0 14px;font-size:clamp(40px,7.4vw,82px);line-height:1.02;letter-spacing:-.045em;font-weight:900}
-  h1 span{background:linear-gradient(100deg,var(--pink) 0%,var(--orange) 42%,var(--cyan) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lede{max-width:620px;margin:0 auto;color:var(--muted);font-size:15px;line-height:1.85}
-  .lede b{color:var(--text);font-weight:700}
-  .tzbar{margin:26px auto 0;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
-    padding:9px 16px;border:1px solid var(--line);background:var(--panel);border-radius:100px;font-size:12.5px;color:var(--muted)}
-  .tzbar svg{flex:none;opacity:.8}
-  .tzbar strong{color:var(--text);font-family:var(--mono);font-size:12px}
+      /* ---------- hero ---------- */
+      .hero {
+        padding: 58px 0 26px;
+        text-align: center;
+      }
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        font-weight: 700;
+        color: var(--cyan);
+        border: 1px solid rgba(63, 216, 255, 0.28);
+        background: rgba(63, 216, 255, 0.07);
+        padding: 8px 16px;
+        border-radius: 100px;
+        text-transform: uppercase;
+      }
+      .kicker .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 10px var(--cyan);
+        animation: pulse 2s infinite;
+      }
+      h1 {
+        margin: 24px 0 14px;
+        font-size: clamp(40px, 7.4vw, 82px);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        font-weight: 900;
+      }
+      h1 span {
+        background: linear-gradient(
+          100deg,
+          var(--pink) 0%,
+          var(--orange) 42%,
+          var(--cyan) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .lede {
+        max-width: 620px;
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.85;
+      }
+      .lede b {
+        color: var(--text);
+        font-weight: 700;
+      }
+      .tzbar {
+        margin: 26px auto 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 9px 16px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 100px;
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+      .tzbar svg {
+        flex: none;
+        opacity: 0.8;
+      }
+      .tzbar strong {
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 12px;
+      }
 
-  /* ---------- countdown card ---------- */
-  .card{margin:32px auto 0;max-width:780px;border:1px solid var(--line);border-radius:var(--radius);
-    background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-    box-shadow:0 30px 80px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.09);overflow:hidden}
-  .card-top{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    border-bottom:1px solid var(--line-soft);font-size:12.5px;color:var(--muted)}
-  .card-top .label{display:flex;align-items:center;gap:8px;font-weight:600}
-  .card-top .label i{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink);display:inline-block}
-  .pill{font-family:var(--mono);font-size:11px;color:var(--cyan);background:rgba(63,216,255,.09);border:1px solid rgba(63,216,255,.22);padding:5px 10px;border-radius:7px}
-  .clock{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:30px 24px 18px}
-  .unit{text-align:center}
-  .unit .num{font-family:var(--mono);font-size:clamp(38px,8.2vw,74px);font-weight:700;line-height:1;letter-spacing:-.055em;
-    font-variant-numeric:tabular-nums;
-    background:linear-gradient(180deg,#fff 10%,#c9b9e8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .unit .cap{margin-top:10px;font-size:10.5px;letter-spacing:.2em;color:var(--muted2);text-transform:uppercase}
-  .unlocked{display:none;padding:34px 24px 26px}
-  .unlocked .big{font-size:clamp(30px,6vw,52px);font-weight:900;letter-spacing:-.03em;
-    background:linear-gradient(100deg,var(--ok),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .unlocked p{color:var(--muted);font-size:13.5px;margin:12px 0 0}
-  .card-foot{padding:14px 24px 20px;display:flex;justify-content:center;gap:10px 28px;flex-wrap:wrap;
-    border-top:1px solid var(--line-soft);font-size:12.5px;color:var(--muted)}
-  .card-foot b{color:var(--text);font-family:var(--mono);font-weight:600}
-  .card.live .clock{display:none}
-  .card.live .unlocked{display:block}
+      /* ---------- countdown card ---------- */
+      .card {
+        margin: 32px auto 0;
+        max-width: 780px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.075),
+          rgba(255, 255, 255, 0.025)
+        );
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.42),
+          inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        overflow: hidden;
+      }
+      .card-top {
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--line-soft);
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+      .card-top .label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+      }
+      .card-top .label i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--pink);
+        box-shadow: 0 0 12px var(--pink);
+        display: inline-block;
+      }
+      .pill {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--cyan);
+        background: rgba(63, 216, 255, 0.09);
+        border: 1px solid rgba(63, 216, 255, 0.22);
+        padding: 5px 10px;
+        border-radius: 7px;
+      }
+      .clock {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 30px 24px 18px;
+      }
+      .unit {
+        text-align: center;
+      }
+      .unit .num {
+        font-family: var(--mono);
+        font-size: clamp(38px, 8.2vw, 74px);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.055em;
+        font-variant-numeric: tabular-nums;
+        background: linear-gradient(180deg, #fff 10%, #c9b9e8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .unit .cap {
+        margin-top: 10px;
+        font-size: 10.5px;
+        letter-spacing: 0.2em;
+        color: var(--muted2);
+        text-transform: uppercase;
+      }
+      .unlocked {
+        display: none;
+        padding: 34px 24px 26px;
+      }
+      .unlocked .big {
+        font-size: clamp(30px, 6vw, 52px);
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        background: linear-gradient(100deg, var(--ok), var(--cyan));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .unlocked p {
+        color: var(--muted);
+        font-size: 13.5px;
+        margin: 12px 0 0;
+      }
+      .card-foot {
+        padding: 14px 24px 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px 28px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--line-soft);
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+      .card-foot b {
+        color: var(--text);
+        font-family: var(--mono);
+        font-weight: 600;
+      }
+      .card.live .clock {
+        display: none;
+      }
+      .card.live .unlocked {
+        display: block;
+      }
 
-  /* ---------- controls ---------- */
-  .controls{margin:22px auto 0;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
-  .btn,.select-wrap{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 15px;border-radius:11px;
-    border:1px solid var(--line);background:var(--panel);color:var(--text);font-family:inherit;font-size:12.5px;cursor:pointer;transition:.2s}
-  .btn:hover,.select-wrap:hover{border-color:rgba(255,61,129,.5);background:var(--panel-strong);transform:translateY(-1px)}
-  .btn.primary{border:none;background:linear-gradient(100deg,var(--pink),var(--orange));color:#1a0a16;font-weight:800;
-    box-shadow:0 10px 28px rgba(255,61,129,.28)}
-  .btn.primary:hover{box-shadow:0 14px 34px rgba(255,61,129,.42)}
-  .select-wrap{padding-right:6px;color:var(--muted)}
-  .select-wrap select{appearance:none;border:0;outline:0;background:transparent;color:var(--text);font-family:inherit;font-size:12.5px;padding:0 22px 0 2px;cursor:pointer;max-width:210px}
-  .select-wrap select option{background:#1a1028;color:#fff}
-  .select-wrap svg{pointer-events:none}
-  .select-wrap svg:last-child{margin-left:-20px}
+      /* ---------- controls ---------- */
+      .controls {
+        margin: 22px auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn,
+      .select-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        height: 40px;
+        padding: 0 15px;
+        border-radius: 11px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        color: var(--text);
+        font-family: inherit;
+        font-size: 12.5px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .btn:hover,
+      .select-wrap:hover {
+        border-color: rgba(255, 61, 129, 0.5);
+        background: var(--panel-strong);
+        transform: translateY(-1px);
+      }
+      .btn.primary {
+        border: none;
+        background: linear-gradient(100deg, var(--pink), var(--orange));
+        color: #1a0a16;
+        font-weight: 800;
+        box-shadow: 0 10px 28px rgba(255, 61, 129, 0.28);
+      }
+      .btn.primary:hover {
+        box-shadow: 0 14px 34px rgba(255, 61, 129, 0.42);
+      }
+      .select-wrap {
+        padding-right: 6px;
+        color: var(--muted);
+      }
+      .select-wrap select {
+        appearance: none;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: var(--text);
+        font-family: inherit;
+        font-size: 12.5px;
+        padding: 0 22px 0 2px;
+        cursor: pointer;
+        max-width: 210px;
+      }
+      .select-wrap select option {
+        background: #1a1028;
+        color: #fff;
+      }
+      .select-wrap svg {
+        pointer-events: none;
+      }
+      .select-wrap svg:last-child {
+        margin-left: -20px;
+      }
 
-  /* ---------- mini stats ---------- */
-  .minis{margin:42px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .mini{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:18px 18px 16px;text-align:left;transition:.2s}
-  .mini:hover{border-color:rgba(255,255,255,.22);transform:translateY(-2px)}
-  .mini .t{font-size:11px;letter-spacing:.12em;color:var(--muted2);text-transform:uppercase;display:flex;align-items:center;gap:7px}
-  .mini .t i{width:6px;height:6px;border-radius:50%;display:inline-block}
-  .mini .v{font-family:var(--mono);font-size:clamp(15px,2.4vw,20px);font-weight:700;margin-top:11px;font-variant-numeric:tabular-nums}
-  .mini .s{font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.5}
-  .mini .cd{font-family:var(--mono);font-size:12px;color:var(--cyan);margin-top:9px;font-variant-numeric:tabular-nums}
+      /* ---------- mini stats ---------- */
+      .minis {
+        margin: 42px 0 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .mini {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 15px;
+        padding: 18px 18px 16px;
+        text-align: left;
+        transition: 0.2s;
+      }
+      .mini:hover {
+        border-color: rgba(255, 255, 255, 0.22);
+        transform: translateY(-2px);
+      }
+      .mini .t {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted2);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .mini .t i {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .mini .v {
+        font-family: var(--mono);
+        font-size: clamp(15px, 2.4vw, 20px);
+        font-weight: 700;
+        margin-top: 11px;
+        font-variant-numeric: tabular-nums;
+      }
+      .mini .s {
+        font-size: 11.5px;
+        color: var(--muted);
+        margin-top: 7px;
+        line-height: 1.5;
+      }
+      .mini .cd {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--cyan);
+        margin-top: 9px;
+        font-variant-numeric: tabular-nums;
+      }
 
-  /* ---------- sections ---------- */
-  section{padding:64px 0 0}
-  .sec-head{margin-bottom:22px}
-  .sec-head .eyebrow{font-size:11px;letter-spacing:.2em;color:var(--pink);font-weight:700;text-transform:uppercase}
-  .sec-head h2{font-size:clamp(23px,3.6vw,34px);letter-spacing:-.03em;margin:10px 0 8px;font-weight:800}
-  .sec-head p{color:var(--muted);font-size:13.5px;line-height:1.75;margin:0;max-width:720px}
-  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .fact{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:20px}
-  .fact .n{font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:-.04em;
-    background:linear-gradient(100deg,var(--pink),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .fact .l{font-size:12.5px;font-weight:700;margin-top:9px}
-  .fact .d{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.6}
+      /* ---------- sections ---------- */
+      section {
+        padding: 64px 0 0;
+      }
+      .sec-head {
+        margin-bottom: 22px;
+      }
+      .sec-head .eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--pink);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .sec-head h2 {
+        font-size: clamp(23px, 3.6vw, 34px);
+        letter-spacing: -0.03em;
+        margin: 10px 0 8px;
+        font-weight: 800;
+      }
+      .sec-head p {
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.75;
+        margin: 0;
+        max-width: 720px;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .fact {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 15px;
+        padding: 20px;
+      }
+      .fact .n {
+        font-family: var(--mono);
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        background: linear-gradient(100deg, var(--pink), var(--orange));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .fact .l {
+        font-size: 12.5px;
+        font-weight: 700;
+        margin-top: 9px;
+      }
+      .fact .d {
+        font-size: 11.5px;
+        color: var(--muted);
+        margin-top: 6px;
+        line-height: 1.6;
+      }
 
-  /* ---------- timeline strip ---------- */
-  .band{margin-top:22px;border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:22px 24px 18px}
-  .band-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted2);letter-spacing:.1em;margin-bottom:14px}
-  .track{height:10px;border-radius:100px;background:linear-gradient(90deg,var(--pink),var(--violet) 45%,var(--orange) 72%,var(--cyan));position:relative;box-shadow:0 0 24px rgba(255,61,129,.25)}
-  .track .tick{position:absolute;top:-4px;width:2px;height:18px;background:rgba(255,255,255,.8);border-radius:2px}
-  .band-marks{display:flex;justify-content:space-between;gap:10px;margin-top:12px;flex-wrap:wrap}
-  .band-marks div{font-size:11.5px;color:var(--muted)}
-  .band-marks b{display:block;color:var(--text);font-family:var(--mono);font-size:12px;margin-bottom:3px;font-weight:600}
+      /* ---------- timeline strip ---------- */
+      .band {
+        margin-top: 22px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 15px;
+        padding: 22px 24px 18px;
+      }
+      .band-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        color: var(--muted2);
+        letter-spacing: 0.1em;
+        margin-bottom: 14px;
+      }
+      .track {
+        height: 10px;
+        border-radius: 100px;
+        background: linear-gradient(
+          90deg,
+          var(--pink),
+          var(--violet) 45%,
+          var(--orange) 72%,
+          var(--cyan)
+        );
+        position: relative;
+        box-shadow: 0 0 24px rgba(255, 61, 129, 0.25);
+      }
+      .track .tick {
+        position: absolute;
+        top: -4px;
+        width: 2px;
+        height: 18px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 2px;
+      }
+      .band-marks {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+      .band-marks div {
+        font-size: 11.5px;
+        color: var(--muted);
+      }
+      .band-marks b {
+        display: block;
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 12px;
+        margin-bottom: 3px;
+        font-weight: 600;
+      }
 
-  /* ---------- table ---------- */
-  .table-shell{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}
-  .table-scroll{overflow-x:auto}
-  table{width:100%;border-collapse:collapse;min-width:760px;font-size:13px}
-  thead th{text-align:left;padding:14px 18px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);
-    font-weight:700;background:rgba(255,255,255,.035);border-bottom:1px solid var(--line)}
-  tbody td{padding:13px 18px;border-bottom:1px solid var(--line-soft);vertical-align:middle}
-  tbody tr:last-child td{border-bottom:0}
-  tbody tr{transition:background .2s}
-  tbody tr:hover{background:rgba(255,255,255,.045)}
-  tbody tr.me{background:linear-gradient(90deg,rgba(255,61,129,.13),rgba(255,61,129,.02))}
-  tbody tr.me td:first-child{box-shadow:inset 3px 0 0 var(--pink)}
-  .rname{font-weight:700;color:var(--text)}
-  .rname small{display:block;font-weight:400;color:var(--muted2);font-size:11px;margin-top:3px}
-  .tag{display:inline-block;margin-left:7px;font-size:10px;font-weight:700;padding:3px 7px;border-radius:6px;vertical-align:middle;
-    background:rgba(63,216,255,.12);color:var(--cyan);border:1px solid rgba(63,216,255,.25)}
-  .tag.first{background:rgba(255,61,129,.13);color:var(--pink);border-color:rgba(255,61,129,.3)}
-  .tag.you{background:rgba(84,224,168,.13);color:var(--ok);border-color:rgba(84,224,168,.3)}
-  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:12.5px}
-  .bj{color:var(--text);font-weight:600}
-  .utc{color:var(--muted2)}
-  .st{font-size:11px;color:var(--muted);white-space:nowrap}
-  .st.ok{color:var(--ok);font-weight:700}
-  .st .blink{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ok);margin-right:6px;box-shadow:0 0 8px var(--ok);animation:pulse 2s infinite}
-  .tfoot{padding:13px 18px;font-size:11.5px;color:var(--muted2);border-top:1px solid var(--line-soft);line-height:1.7}
+      /* ---------- table ---------- */
+      .table-shell {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: var(--panel);
+      }
+      .table-scroll {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 760px;
+        font-size: 13px;
+      }
+      thead th {
+        text-align: left;
+        padding: 14px 18px;
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted2);
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.035);
+        border-bottom: 1px solid var(--line);
+      }
+      tbody td {
+        padding: 13px 18px;
+        border-bottom: 1px solid var(--line-soft);
+        vertical-align: middle;
+      }
+      tbody tr:last-child td {
+        border-bottom: 0;
+      }
+      tbody tr {
+        transition: background 0.2s;
+      }
+      tbody tr:hover {
+        background: rgba(255, 255, 255, 0.045);
+      }
+      tbody tr.me {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 61, 129, 0.13),
+          rgba(255, 61, 129, 0.02)
+        );
+      }
+      tbody tr.me td:first-child {
+        box-shadow: inset 3px 0 0 var(--pink);
+      }
+      .rname {
+        font-weight: 700;
+        color: var(--text);
+      }
+      .rname small {
+        display: block;
+        font-weight: 400;
+        color: var(--muted2);
+        font-size: 11px;
+        margin-top: 3px;
+      }
+      .tag {
+        display: inline-block;
+        margin-left: 7px;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 7px;
+        border-radius: 6px;
+        vertical-align: middle;
+        background: rgba(63, 216, 255, 0.12);
+        color: var(--cyan);
+        border: 1px solid rgba(63, 216, 255, 0.25);
+      }
+      .tag.first {
+        background: rgba(255, 61, 129, 0.13);
+        color: var(--pink);
+        border-color: rgba(255, 61, 129, 0.3);
+      }
+      .tag.you {
+        background: rgba(84, 224, 168, 0.13);
+        color: var(--ok);
+        border-color: rgba(84, 224, 168, 0.3);
+      }
+      .mono {
+        font-family: var(--mono);
+        font-variant-numeric: tabular-nums;
+        font-size: 12.5px;
+      }
+      .bj {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .utc {
+        color: var(--muted2);
+      }
+      .st {
+        font-size: 11px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .st.ok {
+        color: var(--ok);
+        font-weight: 700;
+      }
+      .st .blink {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ok);
+        margin-right: 6px;
+        box-shadow: 0 0 8px var(--ok);
+        animation: pulse 2s infinite;
+      }
+      .tfoot {
+        padding: 13px 18px;
+        font-size: 11.5px;
+        color: var(--muted2);
+        border-top: 1px solid var(--line-soft);
+        line-height: 1.7;
+      }
 
-  /* ---------- faq ---------- */
-  .faq-list{display:grid;gap:10px}
-  details{border:1px solid var(--line);background:var(--panel);border-radius:13px;padding:0 18px;transition:.2s}
-  details[open]{background:var(--panel-strong);border-color:rgba(255,61,129,.3)}
-  summary{cursor:pointer;list-style:none;padding:17px 0;font-size:14px;font-weight:700;display:flex;justify-content:space-between;gap:16px;align-items:center}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";font-family:var(--mono);font-size:19px;color:var(--pink);font-weight:400;line-height:1}
-  details[open] summary::after{content:"−"}
-  details p{margin:0 0 18px;color:var(--muted);font-size:13px;line-height:1.85}
+      /* ---------- faq ---------- */
+      .faq-list {
+        display: grid;
+        gap: 10px;
+      }
+      details {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 13px;
+        padding: 0 18px;
+        transition: 0.2s;
+      }
+      details[open] {
+        background: var(--panel-strong);
+        border-color: rgba(255, 61, 129, 0.3);
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 17px 0;
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::after {
+        content: "+";
+        font-family: var(--mono);
+        font-size: 19px;
+        color: var(--pink);
+        font-weight: 400;
+        line-height: 1;
+      }
+      details[open] summary::after {
+        content: "−";
+      }
+      details p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.85;
+      }
 
-  /* ---------- footer ---------- */
-  footer{margin-top:72px;padding:30px 0 46px;border-top:1px solid var(--line);color:var(--muted2);font-size:11.5px;line-height:1.9}
-  footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  footer b{color:var(--muted)}
-  .disclaimer{margin-top:16px;padding:14px 16px;border:1px solid rgba(255,154,77,.22);background:rgba(255,154,77,.055);border-radius:11px;color:#c9b79f}
+      /* ---------- footer ---------- */
+      footer {
+        margin-top: 72px;
+        padding: 30px 0 46px;
+        border-top: 1px solid var(--line);
+        color: var(--muted2);
+        font-size: 11.5px;
+        line-height: 1.9;
+      }
+      footer .frow {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      footer b {
+        color: var(--muted);
+      }
+      .disclaimer {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 154, 77, 0.22);
+        background: rgba(255, 154, 77, 0.055);
+        border-radius: 11px;
+        color: #c9b79f;
+      }
 
-  /* ---------- ad slots ---------- */
-  .adslot{display:none}
-  .adslot.active{display:block;max-width:970px;margin:38px auto 0;text-align:center}
-  .adslot.active::before{content:"广告 · AD";display:block;font-size:9px;letter-spacing:.24em;color:var(--muted2);margin-bottom:9px}
-  .adslot ins.adsbygoogle{display:block;min-height:90px}
-  .adnote{margin-top:14px;font-size:11.5px;color:var(--muted2);line-height:1.8}
-  .adnote a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
-  .adnote a:hover{color:var(--text)}
-  .contact{margin-top:10px;font-size:11.5px;color:var(--muted2);line-height:1.8}
-  .contact a{color:var(--cyan);text-decoration:none}
-  .contact a:hover{text-decoration:underline;text-underline-offset:2px}
+      /* ---------- ad slots ---------- */
+      .adslot {
+        display: none;
+      }
+      .adslot.active {
+        display: block;
+        max-width: 970px;
+        margin: 38px auto 0;
+        text-align: center;
+      }
+      .adslot.active::before {
+        content: "广告 · AD";
+        display: block;
+        font-size: 9px;
+        letter-spacing: 0.24em;
+        color: var(--muted2);
+        margin-bottom: 9px;
+      }
+      .adslot ins.adsbygoogle {
+        display: block;
+        min-height: 90px;
+      }
+      .adnote {
+        margin-top: 14px;
+        font-size: 11.5px;
+        color: var(--muted2);
+        line-height: 1.8;
+      }
+      .adnote a {
+        color: var(--muted);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .adnote a:hover {
+        color: var(--text);
+      }
+      .contact {
+        margin-top: 10px;
+        font-size: 11.5px;
+        color: var(--muted2);
+        line-height: 1.8;
+      }
+      .contact a {
+        color: var(--cyan);
+        text-decoration: none;
+      }
+      .contact a:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
 
-  /* ---------- responsive ---------- */
-  @media (max-width:820px){
-    .facts{grid-template-columns:repeat(2,1fr)}
-    .minis{grid-template-columns:1fr}
-    .hero{padding-top:38px}
-  }
-  @media (max-width:560px){
-    .clock{padding:24px 12px 14px;gap:2px}
-    .unit .num{font-size:clamp(32px,11vw,52px)}
-    .unit .cap{font-size:9px;letter-spacing:.1em}
-    .card-top,.card-foot{justify-content:center;text-align:center}
-    .facts{grid-template-columns:1fr}
-    .band{padding:18px 16px}
-    section{padding-top:48px}
-    nav.links{display:none}
-  }
-</style>
-  <link rel="alternate" hreflang="zh" href="gta6-countdown.html">
-  <link rel="alternate" hreflang="en" href="gta6-countdown-en.html">
-  <link rel="alternate" hreflang="x-default" href="gta6-countdown-en.html">
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8335716084958178" crossorigin="anonymous"></script>
-<script>
-/* 使用说明：把下面 3 个空字符串换成你的「广告单元 ID」（AdSense 后台 → 广告 → 按广告单元 → 展示广告）。
+      /* ---------- responsive ---------- */
+      @media (max-width: 820px) {
+        .facts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .minis {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          padding-top: 38px;
+        }
+      }
+      @media (max-width: 560px) {
+        .clock {
+          padding: 24px 12px 14px;
+          gap: 2px;
+        }
+        .unit .num {
+          font-size: clamp(32px, 11vw, 52px);
+        }
+        .unit .cap {
+          font-size: 9px;
+          letter-spacing: 0.1em;
+        }
+        .card-top,
+        .card-foot {
+          justify-content: center;
+          text-align: center;
+        }
+        .facts {
+          grid-template-columns: 1fr;
+        }
+        .band {
+          padding: 18px 16px;
+        }
+        section {
+          padding-top: 48px;
+        }
+        nav.links {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="alternate" hreflang="zh" href="gta6-countdown.html" />
+    <link rel="alternate" hreflang="en" href="gta6-countdown-en.html" />
+    <link rel="alternate" hreflang="x-default" href="gta6-countdown-en.html" />
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8335716084958178"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /* 使用说明：把下面 3 个空字符串换成你的「广告单元 ID」（AdSense 后台 → 广告 → 按广告单元 → 展示广告）。
    留空 = 该位置不渲染广告，页面上也不会出现空白框。
    如果只打算用「自动广告」，三行保持空白即可，上面那段脚本已经生效。*/
-window.GTA6_ADS = {
-  client: 'ca-pub-8335716084958178',
-  slots: { top: '', mid: '', bottom: '' }
-};
-</script>
-</head>
-<body>
-<div class="bg"></div>
-<div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+      window.GTA6_ADS = {
+        client: "ca-pub-8335716084958178",
+        slots: { top: "", mid: "", bottom: "" },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+    <div class="orb c"></div>
 
-<div class="wrap">
-  <header class="site">
-    <a class="brand" href="#top">
-      <span class="mark">VI</span>
-      <span class="txt">GTA6 解锁时刻<small>GLOBAL UNLOCK CLOCK</small></span>
-    </a>
-    <nav class="links">
-      <a href="#top">倒计时</a>
-      <a href="#table">时区对照表</a>
-      <a href="#facts">发售须知</a>
-      <a href="#faq">常见问题</a>
-      <a href="gta6-countdown-en.html" hreflang="en">EN</a>
-    </nav>
-  </header>
+    <div class="wrap">
+      <header class="site">
+        <a class="brand" href="#top">
+          <span class="mark">VI</span>
+          <span class="txt"
+            >GTA6 解锁时刻<small>GLOBAL UNLOCK CLOCK</small></span
+          >
+        </a>
+        <nav class="links">
+          <a href="#top">倒计时</a>
+          <a href="#table">时区对照表</a>
+          <a href="#facts">发售须知</a>
+          <a href="#faq">常见问题</a>
+          <a href="gta6-countdown-en.html" hreflang="en">EN</a>
+        </nav>
+      </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="kicker"><span class="dot"></span>2026.11.19 · PS5 / XBOX SERIES X|S</div>
-      <h1>GTA VI<br><span>全球解锁倒计时</span></h1>
-      <p class="lede">同一款游戏，全球解锁相差 <b>18 小时</b>。新西兰最早开跑，美区最晚。下面这个时钟已经自动对齐<b>你所在时区</b>的解锁时刻。</p>
+      <main id="top">
+        <section class="hero">
+          <div class="kicker">
+            <span class="dot"></span>2026.11.19 · PS5 / XBOX SERIES X|S
+          </div>
+          <h1>GTA VI<br /><span>全球解锁倒计时</span></h1>
+          <p class="lede">
+            同一款游戏，全球解锁相差
+            <b>18 小时</b
+            >。新西兰最早开跑，美区最晚。下面这个时钟已经自动对齐<b>你所在时区</b>的解锁时刻。
+          </p>
 
-      <div class="tzbar">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
-        <span>已识别你的时区</span><strong id="tzName">检测中…</strong><span id="tzOffset"></span>
-      </div>
+          <div class="tzbar">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+            </svg>
+            <span>已识别你的时区</span><strong id="tzName">检测中…</strong
+            ><span id="tzOffset"></span>
+          </div>
 
-      <div class="card" id="mainCard">
-        <div class="card-top">
-          <span class="label"><i></i> <span id="cdTitle">你所在地区解锁还有</span></span>
-          <span class="pill" id="cdRegion">—</span>
+          <div class="card" id="mainCard">
+            <div class="card-top">
+              <span class="label"
+                ><i></i> <span id="cdTitle">你所在地区解锁还有</span></span
+              >
+              <span class="pill" id="cdRegion">—</span>
+            </div>
+            <div class="clock" id="clock">
+              <div class="unit">
+                <div class="num" id="d">00</div>
+                <div class="cap">Days 天</div>
+              </div>
+              <div class="unit">
+                <div class="num" id="h">00</div>
+                <div class="cap">Hours 时</div>
+              </div>
+              <div class="unit">
+                <div class="num" id="m">00</div>
+                <div class="cap">Minutes 分</div>
+              </div>
+              <div class="unit">
+                <div class="num" id="s">00</div>
+                <div class="cap">Seconds 秒</div>
+              </div>
+            </div>
+            <div class="unlocked">
+              <div class="big">已解锁 · 可以进游戏了</div>
+              <p id="unlockedSub">你所在地区的解锁时刻已到达，祝你玩得开心。</p>
+            </div>
+            <div class="card-foot">
+              <span>当地解锁 <b id="localTime">—</b></span>
+              <span>北京时间 <b id="bjTime">—</b></span>
+              <span id="diffText">—</span>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="btn primary" id="icsBtn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M16 3v4M8 3v4M3 11h18" />
+              </svg>
+              加入我的日历
+            </button>
+            <button class="btn" id="copyBtn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" />
+                <path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" />
+              </svg>
+              复制页面链接
+            </button>
+            <label class="select-wrap">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path
+                  d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"
+                />
+              </svg>
+              <select id="regionSelect" aria-label="切换查看地区"></select>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </label>
+          </div>
+
+          <div class="minis">
+            <div class="mini">
+              <div class="t">
+                <i style="background: var(--pink)"></i>全球最早 · 新西兰
+              </div>
+              <div class="v">11/18 19:00</div>
+              <div class="s">北京时间 · 奥克兰当地 11/19 00:00</div>
+              <div class="cd" id="cdFirst">—</div>
+            </div>
+            <div class="mini">
+              <div class="t">
+                <i style="background: var(--cyan)"></i>预载开放 · 11/12
+              </div>
+              <div class="v">210 GB</div>
+              <div class="s">
+                各区本地时间 0 点开放，提前下好 19 日零点直接进
+              </div>
+              <div class="cd" id="cdPreload">—</div>
+            </div>
+            <div class="mini">
+              <div class="t">
+                <i style="background: var(--orange)"></i>全球最晚 · 美区
+              </div>
+              <div class="v">11/19 13:00</div>
+              <div class="s">
+                北京时间 · 全美按美东 0 点解锁（西部 11/18 21:00）
+              </div>
+              <div class="cd" id="cdLast">—</div>
+            </div>
+          </div>
+        </section>
+
+        <div class="adslot" data-pos="top"></div>
+
+        <section id="facts">
+          <div class="sec-head">
+            <div class="eyebrow">Before you play</div>
+            <h2>发售前必须知道的 4 件事</h2>
+            <p>
+              这些是玩家在解锁当天搜索最多、也最容易踩坑的点。提前处理好，19
+              号零点才不会在下载进度条上干等。
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="n">11/19</div>
+              <div class="l">全球发售日</div>
+              <div class="d">
+                仅 PS5、PS5 Pro、Xbox Series X|S。PS4 / Xbox One 无版本。
+              </div>
+            </div>
+            <div class="fact">
+              <div class="n">210GB</div>
+              <div class="l">下载体积</div>
+              <div class="d">
+                PS5 Slim 可用约 840GB，装完它就没了四分之一。提前删游戏或加
+                M.2。
+              </div>
+            </div>
+            <div class="fact">
+              <div class="n">11/12</div>
+              <div class="l">开放预载</div>
+              <div class="d">
+                数字版 0 点开放预载；实体版盒内是兑换码，不是光盘。
+              </div>
+            </div>
+            <div class="fact">
+              <div class="n">NO PC</div>
+              <div class="l">首发无 PC 版</div>
+              <div class="d">
+                官方未公布 PC 日期，云串流也走不通。PC 玩家普遍预期要等到 2027
+                年。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="table">
+          <div class="sec-head">
+            <div class="eyebrow">Unlock schedule</div>
+            <h2>全球解锁时间对照表</h2>
+            <p>
+              官方按各区本地时间 11 月 19 日 0 点解锁（美区全境按美东 0
+              点）。下表按 UTC 先后排列，时间为 2026 年，已按 11
+              月各区实际夏令时状态换算。
+            </p>
+          </div>
+
+          <div class="band">
+            <div class="band-label">
+              <span>全球解锁窗口</span><span>前后相差 18 小时</span>
+            </div>
+            <div class="track">
+              <span class="tick" style="left: 0%"></span
+              ><span class="tick" style="left: 27.7%"></span
+              ><span class="tick" style="left: 100%"></span>
+            </div>
+            <div class="band-marks">
+              <div><b>11/18 19:00</b>新西兰 · 全球最早</div>
+              <div><b>11/19 00:00</b>中国香港 / 北京时间</div>
+              <div><b>11/19 13:00</b>美区 · 全球最晚</div>
+            </div>
+          </div>
+
+          <div class="table-shell" style="margin-top: 14px">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 30%">地区 / 商店</th>
+                    <th style="width: 22%">当地解锁时间</th>
+                    <th style="width: 20%">北京时间</th>
+                    <th style="width: 14%">UTC</th>
+                    <th style="width: 14%">状态</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+            <div class="tfoot">
+              高亮行是你当前所在的时区。中国大陆暂无官方发行，中文玩家常用的中国香港商店按
+              11 月 19 日
+              00:00（北京时间）解锁。美区三行对应同一个解锁时刻，只是各地本地时钟显示不同。
+            </div>
+          </div>
+        </section>
+
+        <div class="adslot" data-pos="mid"></div>
+
+        <section id="faq">
+          <div class="sec-head">
+            <div class="eyebrow">FAQ</div>
+            <h2>常见问题</h2>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>GTA6 到底几点能玩？为什么各地不一样？</summary>
+              <p>
+                《GTA VI》2026 年 11 月 19 日发售，Rockstar 采用「各区本地时间 0
+                点解锁」的方式。因此最接近国际日期变更线的新西兰最先到 0
+                点，北京时间 11 月 18 日 19:00
+                就能进；中国香港、日本、新加坡等依次跟上；美区最晚，北京时间 11
+                月 19 日 13:00。全球前后相差 18
+                小时，这也是每年都有玩家关注「最早解锁时区」的原因。
+              </p>
+            </details>
+            <details>
+              <summary>有 PC 版吗？能用云游戏串流先玩吗？</summary>
+              <p>
+                首发没有 PC 版。官方目前只公布 PS5 与 Xbox Series X|S，未公布 PC
+                发售日与配置要求，也没有可串流的 PC 版本存在——GeForce NOW
+                之类的服务只能串流已经存在的 PC 版，Xbox 方面也已否认 PC
+                独占云串流的传闻。参考 GTA5（主机到 PC 隔 19
+                个月）与《荒野大镖客 2》（13 个月），分析师普遍预期 PC 版在 2027
+                年，但 Rockstar 尚未确认。
+              </p>
+            </details>
+            <details>
+              <summary>预载什么时候开？210GB 装不下怎么办？</summary>
+              <p>
+                数字版 11 月 12 日 0
+                点（各区本地时间）开放预载，下载的是加密文件，19
+                日解锁前无法进入游戏。PS5 版约 210GB，PS5 Slim 可用空间约
+                840GB，装完只剩约 630GB，还没算首日补丁。建议 12
+                日之前删掉不玩的游戏，或加装一条 M.2 SSD；别拖到 18
+                日晚上才下，那天服务器排队会很难受。另外实体版盒内是兑换码，不是光盘。
+              </p>
+            </details>
+            <details>
+              <summary>标准版和终极版差在哪？预购有什么？</summary>
+              <p>
+                美区数字版标准版 $79.99、终极版 $99.99，预购可获赠一个月 GTA+
+                等奖励。各区定价与赠品内容以当地商店页面为准，购买前建议对比一下自己所在商店的实际价格。
+              </p>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <div class="adslot" data-pos="bottom"></div>
+
+      <footer>
+        <div class="frow">
+          <div>
+            <b>数据依据</b> · Rockstar 官方发售信息、Insider Gaming
+            发售前盘点、PlayStation Game
+            Size、主机商店公开信息，经各时区夏令时状态换算校验。
+          </div>
+          <div>
+            本页会自动读取你设备的时区，所有计算在本地完成，不上传任何数据。
+          </div>
         </div>
-        <div class="clock" id="clock">
-          <div class="unit"><div class="num" id="d">00</div><div class="cap">Days 天</div></div>
-          <div class="unit"><div class="num" id="h">00</div><div class="cap">Hours 时</div></div>
-          <div class="unit"><div class="num" id="m">00</div><div class="cap">Minutes 分</div></div>
-          <div class="unit"><div class="num" id="s">00</div><div class="cap">Seconds 秒</div></div>
+        <div class="adnote">
+          本页展示 Google AdSense 广告。Google 及第三方供应商可能使用 Cookie
+          或类似技术来投放和衡量广告，你可在浏览器设置中管理偏好。详见<a
+            href="privacy.html"
+            >隐私政策</a
+          >与<a
+            href="https://policies.google.com/technologies/ads"
+            target="_blank"
+            rel="noopener"
+            >Google 如何使用数据</a
+          >。
         </div>
-        <div class="unlocked">
-          <div class="big">已解锁 · 可以进游戏了</div>
-          <p id="unlockedSub">你所在地区的解锁时刻已到达，祝你玩得开心。</p>
+        <div class="contact">
+          联系邮箱 Contact：<a href="mailto:happygc913@gmail.com"
+            >happygc913@gmail.com</a
+          >
+          · 隐私、广告与数据相关事宜
         </div>
-        <div class="card-foot">
-          <span>当地解锁 <b id="localTime">—</b></span>
-          <span>北京时间 <b id="bjTime">—</b></span>
-          <span id="diffText">—</span>
+        <div class="disclaimer">
+          免责声明：本页为玩家自制的非官方信息整理，解锁时刻以 Rockstar
+          及各平台商店最终公告为准。若官方调整发售日或解锁规则，本页数据可能失效。本页与
+          Rockstar Games、Take-Two 无任何关联。
         </div>
-      </div>
-
-      <div class="controls">
-        <button class="btn primary" id="icsBtn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
-          加入我的日历
-        </button>
-        <button class="btn" id="copyBtn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
-          复制页面链接
-        </button>
-        <label class="select-wrap">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
-          <select id="regionSelect" aria-label="切换查看地区"></select>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-        </label>
-      </div>
-
-      <div class="minis">
-        <div class="mini">
-          <div class="t"><i style="background:var(--pink)"></i>全球最早 · 新西兰</div>
-          <div class="v">11/18 19:00</div>
-          <div class="s">北京时间 · 奥克兰当地 11/19 00:00</div>
-          <div class="cd" id="cdFirst">—</div>
-        </div>
-        <div class="mini">
-          <div class="t"><i style="background:var(--cyan)"></i>预载开放 · 11/12</div>
-          <div class="v">210 GB</div>
-          <div class="s">各区本地时间 0 点开放，提前下好 19 日零点直接进</div>
-          <div class="cd" id="cdPreload">—</div>
-        </div>
-        <div class="mini">
-          <div class="t"><i style="background:var(--orange)"></i>全球最晚 · 美区</div>
-          <div class="v">11/19 13:00</div>
-          <div class="s">北京时间 · 全美按美东 0 点解锁（西部 11/18 21:00）</div>
-          <div class="cd" id="cdLast">—</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="adslot" data-pos="top"></div>
-
-    <section id="facts">
-      <div class="sec-head">
-        <div class="eyebrow">Before you play</div>
-        <h2>发售前必须知道的 4 件事</h2>
-        <p>这些是玩家在解锁当天搜索最多、也最容易踩坑的点。提前处理好，19 号零点才不会在下载进度条上干等。</p>
-      </div>
-      <div class="facts">
-        <div class="fact"><div class="n">11/19</div><div class="l">全球发售日</div><div class="d">仅 PS5、PS5 Pro、Xbox Series X|S。PS4 / Xbox One 无版本。</div></div>
-        <div class="fact"><div class="n">210GB</div><div class="l">下载体积</div><div class="d">PS5 Slim 可用约 840GB，装完它就没了四分之一。提前删游戏或加 M.2。</div></div>
-        <div class="fact"><div class="n">11/12</div><div class="l">开放预载</div><div class="d">数字版 0 点开放预载；实体版盒内是兑换码，不是光盘。</div></div>
-        <div class="fact"><div class="n">NO PC</div><div class="l">首发无 PC 版</div><div class="d">官方未公布 PC 日期，云串流也走不通。PC 玩家普遍预期要等到 2027 年。</div></div>
-      </div>
-    </section>
-
-    <section id="table">
-      <div class="sec-head">
-        <div class="eyebrow">Unlock schedule</div>
-        <h2>全球解锁时间对照表</h2>
-        <p>官方按各区本地时间 11 月 19 日 0 点解锁（美区全境按美东 0 点）。下表按 UTC 先后排列，时间为 2026 年，已按 11 月各区实际夏令时状态换算。</p>
-      </div>
-
-      <div class="band">
-        <div class="band-label"><span>全球解锁窗口</span><span>前后相差 18 小时</span></div>
-        <div class="track"><span class="tick" style="left:0%"></span><span class="tick" style="left:27.7%"></span><span class="tick" style="left:100%"></span></div>
-        <div class="band-marks">
-          <div><b>11/18 19:00</b>新西兰 · 全球最早</div>
-          <div><b>11/19 00:00</b>中国香港 / 北京时间</div>
-          <div><b>11/19 13:00</b>美区 · 全球最晚</div>
-        </div>
-      </div>
-
-      <div class="table-shell" style="margin-top:14px">
-        <div class="table-scroll">
-          <table>
-            <thead><tr>
-              <th style="width:30%">地区 / 商店</th>
-              <th style="width:22%">当地解锁时间</th>
-              <th style="width:20%">北京时间</th>
-              <th style="width:14%">UTC</th>
-              <th style="width:14%">状态</th>
-            </tr></thead>
-            <tbody id="tbody"></tbody>
-          </table>
-        </div>
-        <div class="tfoot">高亮行是你当前所在的时区。中国大陆暂无官方发行，中文玩家常用的中国香港商店按 11 月 19 日 00:00（北京时间）解锁。美区三行对应同一个解锁时刻，只是各地本地时钟显示不同。</div>
-      </div>
-    </section>
-
-    <div class="adslot" data-pos="mid"></div>
-
-    <section id="faq">
-      <div class="sec-head">
-        <div class="eyebrow">FAQ</div>
-        <h2>常见问题</h2>
-      </div>
-      <div class="faq-list">
-        <details open><summary>GTA6 到底几点能玩？为什么各地不一样？</summary><p>《GTA VI》2026 年 11 月 19 日发售，Rockstar 采用「各区本地时间 0 点解锁」的方式。因此最接近国际日期变更线的新西兰最先到 0 点，北京时间 11 月 18 日 19:00 就能进；中国香港、日本、新加坡等依次跟上；美区最晚，北京时间 11 月 19 日 13:00。全球前后相差 18 小时，这也是每年都有玩家关注「最早解锁时区」的原因。</p></details>
-        <details><summary>有 PC 版吗？能用云游戏串流先玩吗？</summary><p>首发没有 PC 版。官方目前只公布 PS5 与 Xbox Series X|S，未公布 PC 发售日与配置要求，也没有可串流的 PC 版本存在——GeForce NOW 之类的服务只能串流已经存在的 PC 版，Xbox 方面也已否认 PC 独占云串流的传闻。参考 GTA5（主机到 PC 隔 19 个月）与《荒野大镖客 2》（13 个月），分析师普遍预期 PC 版在 2027 年，但 Rockstar 尚未确认。</p></details>
-        <details><summary>预载什么时候开？210GB 装不下怎么办？</summary><p>数字版 11 月 12 日 0 点（各区本地时间）开放预载，下载的是加密文件，19 日解锁前无法进入游戏。PS5 版约 210GB，PS5 Slim 可用空间约 840GB，装完只剩约 630GB，还没算首日补丁。建议 12 日之前删掉不玩的游戏，或加装一条 M.2 SSD；别拖到 18 日晚上才下，那天服务器排队会很难受。另外实体版盒内是兑换码，不是光盘。</p></details>
-        <details><summary>标准版和终极版差在哪？预购有什么？</summary><p>美区数字版标准版 $79.99、终极版 $99.99，预购可获赠一个月 GTA+ 等奖励。各区定价与赠品内容以当地商店页面为准，购买前建议对比一下自己所在商店的实际价格。</p></details>
-      </div>
-    </section>
-  </main>
-
-  <div class="adslot" data-pos="bottom"></div>
-
-  <footer>
-    <div class="frow">
-      <div><b>数据依据</b> · Rockstar 官方发售信息、Insider Gaming 发售前盘点、PlayStation Game Size、主机商店公开信息，经各时区夏令时状态换算校验。</div>
-      <div>本页会自动读取你设备的时区，所有计算在本地完成，不上传任何数据。</div>
+      </footer>
     </div>
-    <div class="adnote">本页展示 Google AdSense 广告。Google 及第三方供应商可能使用 Cookie 或类似技术来投放和衡量广告，你可在浏览器设置中管理偏好。详见<a href="privacy.html">隐私政策</a>与<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 如何使用数据</a>。</div>
-    <div class="contact">联系邮箱 Contact：<a href="mailto:happygc913@gmail.com">happygc913@gmail.com</a> · 隐私、广告与数据相关事宜</div>
-    <div class="disclaimer">免责声明：本页为玩家自制的非官方信息整理，解锁时刻以 Rockstar 及各平台商店最终公告为准。若官方调整发售日或解锁规则，本页数据可能失效。本页与 Rockstar Games、Take-Two 无任何关联。</div>
-  </footer>
-</div>
 
-<script>
-(function(){
-  "use strict";
-  var U = function(d,h,m){ return Date.UTC(2026,10,d,h,m||0); };
+    <script>
+      (function () {
+        "use strict";
+        var U = function (d, h, m) {
+          return Date.UTC(2026, 10, d, h, m || 0);
+        };
 
-  // 每行的 utc 为该地区的实际解锁时刻（已按 2026 年 11 月各区夏令时换算）
-  var REGIONS = [
-    {k:'nz',  name:'新西兰 · 奥克兰', sub:'PlayStation NZ / Xbox NZ', tz:'Pacific/Auckland',       utc:U(18,11,0),  tag:'全球最早', cls:'first'},
-    {k:'syd', name:'澳大利亚 · 悉尼', sub:'PlayStation AU',            tz:'Australia/Sydney',       utc:U(18,13,0)},
-    {k:'tyo', name:'日本 · 东京 / 韩国 · 首尔', sub:'PSN JP / KR',       tz:'Asia/Tokyo',            utc:U(18,15,0)},
-    {k:'hk',  name:'中国香港 · 新加坡', sub:'PSN HK / SG（中国大陆暂无官方发行）', tz:'Asia/Hong_Kong', utc:U(18,16,0)},
-    {k:'del', name:'印度 · 新德里', sub:'PSN IN',                       tz:'Asia/Kolkata',          utc:U(18,18,30)},
-    {k:'dxb', name:'阿联酋 · 迪拜', sub:'PSN AE',                       tz:'Asia/Dubai',            utc:U(18,20,0)},
-    {k:'mow', name:'俄罗斯 · 莫斯科 / 土耳其', sub:'PSN RU / TR',        tz:'Europe/Moscow',         utc:U(18,21,0)},
-    {k:'jnb', name:'南非 · 约翰内斯堡', sub:'PSN ZA',                    tz:'Africa/Johannesburg',   utc:U(18,22,0)},
-    {k:'ber', name:'欧洲中部 · 柏林 / 巴黎 / 马德里', sub:'PSN EU',       tz:'Europe/Berlin',         utc:U(18,23,0)},
-    {k:'lon', name:'英国 · 伦敦', sub:'PSN UK',                          tz:'Europe/London',         utc:U(19,0,0)},
-    {k:'sao', name:'巴西 · 圣保罗', sub:'PSN BR',                        tz:'America/Sao_Paulo',     utc:U(19,3,0)},
-    {k:'nyc', name:'美国 · 纽约 / 加拿大多伦多', sub:'美东 EST · 全美基准', tz:'America/New_York',    utc:U(19,5,0), tag:'全球最晚'},
-    {k:'chi', name:'美国 · 芝加哥', sub:'美中 CST',                       tz:'America/Chicago',       utc:U(19,5,0)},
-    {k:'lax', name:'美国 · 洛杉矶', sub:'美西 PST',                       tz:'America/Los_Angeles',   utc:U(19,5,0)}
-  ];
-  var FIRST = REGIONS[0].utc;
-  var LAST  = U(19,5,0);
-  var PRELOAD_BJ = U(12,0,0) - 8*3600000; // 北京时间 11/12 00:00 = UTC 11/11 16:00
+        // 每行的 utc 为该地区的实际解锁时刻（已按 2026 年 11 月各区夏令时换算）
+        var REGIONS = [
+          {
+            k: "nz",
+            name: "新西兰 · 奥克兰",
+            sub: "PlayStation NZ / Xbox NZ",
+            tz: "Pacific/Auckland",
+            utc: U(18, 11, 0),
+            tag: "全球最早",
+            cls: "first",
+          },
+          {
+            k: "syd",
+            name: "澳大利亚 · 悉尼",
+            sub: "PlayStation AU",
+            tz: "Australia/Sydney",
+            utc: U(18, 13, 0),
+          },
+          {
+            k: "tyo",
+            name: "日本 · 东京 / 韩国 · 首尔",
+            sub: "PSN JP / KR",
+            tz: "Asia/Tokyo",
+            utc: U(18, 15, 0),
+          },
+          {
+            k: "hk",
+            name: "中国香港 · 新加坡",
+            sub: "PSN HK / SG（中国大陆暂无官方发行）",
+            tz: "Asia/Hong_Kong",
+            utc: U(18, 16, 0),
+          },
+          {
+            k: "del",
+            name: "印度 · 新德里",
+            sub: "PSN IN",
+            tz: "Asia/Kolkata",
+            utc: U(18, 18, 30),
+          },
+          {
+            k: "dxb",
+            name: "阿联酋 · 迪拜",
+            sub: "PSN AE",
+            tz: "Asia/Dubai",
+            utc: U(18, 20, 0),
+          },
+          {
+            k: "mow",
+            name: "俄罗斯 · 莫斯科 / 土耳其",
+            sub: "PSN RU / TR",
+            tz: "Europe/Moscow",
+            utc: U(18, 21, 0),
+          },
+          {
+            k: "jnb",
+            name: "南非 · 约翰内斯堡",
+            sub: "PSN ZA",
+            tz: "Africa/Johannesburg",
+            utc: U(18, 22, 0),
+          },
+          {
+            k: "ber",
+            name: "欧洲中部 · 柏林 / 巴黎 / 马德里",
+            sub: "PSN EU",
+            tz: "Europe/Berlin",
+            utc: U(18, 23, 0),
+          },
+          {
+            k: "lon",
+            name: "英国 · 伦敦",
+            sub: "PSN UK",
+            tz: "Europe/London",
+            utc: U(19, 0, 0),
+          },
+          {
+            k: "sao",
+            name: "巴西 · 圣保罗",
+            sub: "PSN BR",
+            tz: "America/Sao_Paulo",
+            utc: U(19, 3, 0),
+          },
+          {
+            k: "nyc",
+            name: "美国 · 纽约 / 加拿大多伦多",
+            sub: "美东 EST · 全美基准",
+            tz: "America/New_York",
+            utc: U(19, 5, 0),
+            tag: "全球最晚",
+          },
+          {
+            k: "chi",
+            name: "美国 · 芝加哥",
+            sub: "美中 CST",
+            tz: "America/Chicago",
+            utc: U(19, 5, 0),
+          },
+          {
+            k: "lax",
+            name: "美国 · 洛杉矶",
+            sub: "美西 PST",
+            tz: "America/Los_Angeles",
+            utc: U(19, 5, 0),
+          },
+        ];
+        var FIRST = REGIONS[0].utc;
+        var LAST = U(19, 5, 0);
+        var PRELOAD_BJ = U(12, 0, 0) - 8 * 3600000; // 北京时间 11/12 00:00 = UTC 11/11 16:00
 
-  /* ---------- 时区工具 ---------- */
-  function offsetMinutes(ts, tz){
-    var p = {};
-    new Intl.DateTimeFormat('en-US',{timeZone:tz,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'})
-      .formatToParts(new Date(ts)).forEach(function(x){ p[x.type]=x.value; });
-    var asUTC = Date.UTC(+p.year,+p.month-1,+p.day,+p.hour,+p.minute,+p.second);
-    return Math.round((asUTC - ts)/60000);
-  }
-  function fmtDate(ts, tz){
-    var p={};
-    new Intl.DateTimeFormat('en-US',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'})
-      .formatToParts(new Date(ts)).forEach(function(x){p[x.type]=x.value});
-    return p.month+'/'+p.day+' '+p.hour+':'+p.minute;
-  }
-  function offsetLabel(tz, ts){
-    var parts = new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'longOffset'}).formatToParts(new Date(ts));
-    var v=''; parts.forEach(function(x){ if(x.type==='timeZoneName') v=x.value; });
-    if(v) return v.replace('GMT','UTC').replace(':00','');
-    var m=offsetMinutes(ts,tz), sign=m>=0?'+':'-', a=Math.abs(m);
-    return 'UTC'+sign+Math.floor(a/60)+(a%60?':'+String(a%60).padStart(2,'0'):'');
-  }
-  function localMidnight(tz, day){
-    var guess = Date.UTC(2026,10,day-1,12,0);
-    for(var i=0;i<4;i++){
-      var localTs = guess + offsetMinutes(guess,tz)*60000;
-      guess += (Date.UTC(2026,10,day,0,0) - localTs);
-    }
-    return guess;
-  }
+        /* ---------- 时区工具 ---------- */
+        function offsetMinutes(ts, tz) {
+          var p = {};
+          new Intl.DateTimeFormat("en-US", {
+            timeZone: tz,
+            hourCycle: "h23",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+          })
+            .formatToParts(new Date(ts))
+            .forEach(function (x) {
+              p[x.type] = x.value;
+            });
+          var asUTC = Date.UTC(
+            +p.year,
+            +p.month - 1,
+            +p.day,
+            +p.hour,
+            +p.minute,
+            +p.second,
+          );
+          return Math.round((asUTC - ts) / 60000);
+        }
+        function fmtDate(ts, tz) {
+          var p = {};
+          new Intl.DateTimeFormat("en-US", {
+            timeZone: tz,
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            hourCycle: "h23",
+          })
+            .formatToParts(new Date(ts))
+            .forEach(function (x) {
+              p[x.type] = x.value;
+            });
+          return p.month + "/" + p.day + " " + p.hour + ":" + p.minute;
+        }
+        function offsetLabel(tz, ts) {
+          var parts = new Intl.DateTimeFormat("en-US", {
+            timeZone: tz,
+            timeZoneName: "longOffset",
+          }).formatToParts(new Date(ts));
+          var v = "";
+          parts.forEach(function (x) {
+            if (x.type === "timeZoneName") v = x.value;
+          });
+          if (v) return v.replace("GMT", "UTC").replace(":00", "");
+          var m = offsetMinutes(ts, tz),
+            sign = m >= 0 ? "+" : "-",
+            a = Math.abs(m);
+          return (
+            "UTC" +
+            sign +
+            Math.floor(a / 60) +
+            (a % 60 ? ":" + String(a % 60).padStart(2, "0") : "")
+          );
+        }
+        function localMidnight(tz, day) {
+          var guess = Date.UTC(2026, 10, day - 1, 12, 0);
+          for (var i = 0; i < 4; i++) {
+            var localTs = guess + offsetMinutes(guess, tz) * 60000;
+            guess += Date.UTC(2026, 10, day, 0, 0) - localTs;
+          }
+          return guess;
+        }
 
-  /* ---------- 识别用户时区 ---------- */
-  var userTz;
-  try { userTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Shanghai'; }
-  catch(e){ userTz = 'Asia/Shanghai'; }
+        /* ---------- 识别用户时区 ---------- */
+        var userTz;
+        try {
+          userTz =
+            Intl.DateTimeFormat().resolvedOptions().timeZone || "Asia/Shanghai";
+        } catch (e) {
+          userTz = "Asia/Shanghai";
+        }
 
-  var userRegion = null, i;
-  for(i=0;i<REGIONS.length;i++){
-    if(REGIONS[i].tz === userTz){ userRegion = REGIONS[i]; break; }
-  }
-  if(!userRegion){
-    var uOff = offsetMinutes(U(18,16,0), userTz);
-    for(i=0;i<REGIONS.length;i++){
-      if(offsetMinutes(REGIONS[i].utc, REGIONS[i].tz) === uOff){ userRegion = REGIONS[i]; break; }
-    }
-  }
-  var userUnlock = userRegion ? userRegion.utc : localMidnight(userTz,19);
+        var userRegion = null,
+          i;
+        for (i = 0; i < REGIONS.length; i++) {
+          if (REGIONS[i].tz === userTz) {
+            userRegion = REGIONS[i];
+            break;
+          }
+        }
+        if (!userRegion) {
+          var uOff = offsetMinutes(U(18, 16, 0), userTz);
+          for (i = 0; i < REGIONS.length; i++) {
+            if (offsetMinutes(REGIONS[i].utc, REGIONS[i].tz) === uOff) {
+              userRegion = REGIONS[i];
+              break;
+            }
+          }
+        }
+        var userUnlock = userRegion
+          ? userRegion.utc
+          : localMidnight(userTz, 19);
 
-  document.getElementById('tzName').textContent = userTz;
-  document.getElementById('tzOffset').textContent = offsetLabel(userTz, Date.now());
+        document.getElementById("tzName").textContent = userTz;
+        document.getElementById("tzOffset").textContent = offsetLabel(
+          userTz,
+          Date.now(),
+        );
 
-  /* ---------- 视图状态 ---------- */
-  var view = {
-    key: userRegion ? userRegion.k : '__local',
-    name: userRegion ? userRegion.name : userTz,
-    tz: userTz,
-    utc: userUnlock,
-    isLocal: !userRegion
-  };
+        /* ---------- 视图状态 ---------- */
+        var view = {
+          key: userRegion ? userRegion.k : "__local",
+          name: userRegion ? userRegion.name : userTz,
+          tz: userTz,
+          utc: userUnlock,
+          isLocal: !userRegion,
+        };
 
-  var sel = document.getElementById('regionSelect');
-  var opt = document.createElement('option');
-  opt.value='__mine'; opt.textContent='我的时区（自动）'; sel.appendChild(opt);
-  REGIONS.forEach(function(r){
-    var o=document.createElement('option'); o.value=r.k; o.textContent=r.name; sel.appendChild(o);
-  });
-  sel.addEventListener('change', function(){
-    var v=sel.value;
-    if(v==='__mine'){
-      view={key:userRegion?userRegion.k:'__local',name:userRegion?userRegion.name:userTz,tz:userTz,utc:userUnlock,isLocal:!userRegion};
-    } else {
-      var r=REGIONS.filter(function(x){return x.k===v})[0];
-      if(r) view={key:r.k,name:r.name,tz:r.tz,utc:r.utc,isLocal:false};
-    }
-    renderStatic();
-    tick();
-  });
+        var sel = document.getElementById("regionSelect");
+        var opt = document.createElement("option");
+        opt.value = "__mine";
+        opt.textContent = "我的时区（自动）";
+        sel.appendChild(opt);
+        REGIONS.forEach(function (r) {
+          var o = document.createElement("option");
+          o.value = r.k;
+          o.textContent = r.name;
+          sel.appendChild(o);
+        });
+        sel.addEventListener("change", function () {
+          var v = sel.value;
+          if (v === "__mine") {
+            view = {
+              key: userRegion ? userRegion.k : "__local",
+              name: userRegion ? userRegion.name : userTz,
+              tz: userTz,
+              utc: userUnlock,
+              isLocal: !userRegion,
+            };
+          } else {
+            var r = REGIONS.filter(function (x) {
+              return x.k === v;
+            })[0];
+            if (r)
+              view = {
+                key: r.k,
+                name: r.name,
+                tz: r.tz,
+                utc: r.utc,
+                isLocal: false,
+              };
+          }
+          renderStatic();
+          tick();
+        });
 
-  /* ---------- 表格 ---------- */
-  var tbody = document.getElementById('tbody');
-  REGIONS.forEach(function(r){
-    var tr=document.createElement('tr');
-    tr.dataset.k=r.k;
-    tr.innerHTML =
-      '<td><span class="rname">'+r.name+(r.tag?'<span class="tag '+(r.cls||'')+'">'+r.tag+'</span>':'')+'</span><small>'+r.sub+'</small></td>'+
-      '<td class="mono">'+fmtDate(r.utc,r.tz)+' <span style="color:var(--muted2);font-size:11px">'+offsetLabel(r.tz,r.utc)+'</span></td>'+
-      '<td class="mono bj">'+fmtDate(r.utc,'Asia/Shanghai')+'</td>'+
-      '<td class="mono utc">'+fmtDate(r.utc,'UTC')+'</td>'+
-      '<td class="st" data-utc="'+r.utc+'">—</td>';
-    tbody.appendChild(tr);
-  });
+        /* ---------- 表格 ---------- */
+        var tbody = document.getElementById("tbody");
+        REGIONS.forEach(function (r) {
+          var tr = document.createElement("tr");
+          tr.dataset.k = r.k;
+          tr.innerHTML =
+            '<td><span class="rname">' +
+            r.name +
+            (r.tag
+              ? '<span class="tag ' + (r.cls || "") + '">' + r.tag + "</span>"
+              : "") +
+            "</span><small>" +
+            r.sub +
+            "</small></td>" +
+            '<td class="mono">' +
+            fmtDate(r.utc, r.tz) +
+            ' <span style="color:var(--muted2);font-size:11px">' +
+            offsetLabel(r.tz, r.utc) +
+            "</span></td>" +
+            '<td class="mono bj">' +
+            fmtDate(r.utc, "Asia/Shanghai") +
+            "</td>" +
+            '<td class="mono utc">' +
+            fmtDate(r.utc, "UTC") +
+            "</td>" +
+            '<td class="st" data-utc="' +
+            r.utc +
+            '">—</td>';
+          tbody.appendChild(tr);
+        });
 
-  /* ---------- 静态文案 ---------- */
-  function renderStatic(){
-    document.getElementById('cdRegion').textContent = view.name;
-    document.getElementById('cdTitle').textContent = view.isLocal ? '你所在时区按本地 0 点解锁，还有' : '距离 '+view.name+' 解锁还有';
-    document.getElementById('localTime').textContent = fmtDate(view.utc,view.tz)+'（'+offsetLabel(view.tz,view.utc)+'）';
-    document.getElementById('bjTime').textContent = fmtDate(view.utc,'Asia/Shanghai');
-    var dh = (offsetMinutes(view.utc,view.tz)-480)/60;
-    document.getElementById('diffText').textContent = Math.abs(dh)<0.01 ? '与北京时间同步' : '比北京时间'+(dh>0?'早':'晚')+Math.abs(dh)+' 小时';
+        /* ---------- 静态文案 ---------- */
+        function renderStatic() {
+          document.getElementById("cdRegion").textContent = view.name;
+          document.getElementById("cdTitle").textContent = view.isLocal
+            ? "你所在时区按本地 0 点解锁，还有"
+            : "距离 " + view.name + " 解锁还有";
+          document.getElementById("localTime").textContent =
+            fmtDate(view.utc, view.tz) +
+            "（" +
+            offsetLabel(view.tz, view.utc) +
+            "）";
+          document.getElementById("bjTime").textContent = fmtDate(
+            view.utc,
+            "Asia/Shanghai",
+          );
+          var dh = (offsetMinutes(view.utc, view.tz) - 480) / 60;
+          document.getElementById("diffText").textContent =
+            Math.abs(dh) < 0.01
+              ? "与北京时间同步"
+              : "比北京时间" + (dh > 0 ? "早" : "晚") + Math.abs(dh) + " 小时";
 
-    Array.prototype.forEach.call(tbody.children,function(tr){
-      tr.classList.toggle('me', tr.dataset.k===view.key);
-      var tagEl=tr.querySelector('.tag.you'); if(tagEl) tagEl.remove();
-    });
-    if(!view.isLocal){
-      var tr=tbody.querySelector('tr[data-k="'+view.key+'"]');
-      if(tr && !tr.querySelector('.tag.you')){
-        var s=document.createElement('span'); s.className='tag you'; s.textContent='当前查看';
-        tr.querySelector('.rname').appendChild(s);
-      }
-    }
-  }
+          Array.prototype.forEach.call(tbody.children, function (tr) {
+            tr.classList.toggle("me", tr.dataset.k === view.key);
+            var tagEl = tr.querySelector(".tag.you");
+            if (tagEl) tagEl.remove();
+          });
+          if (!view.isLocal) {
+            var tr = tbody.querySelector('tr[data-k="' + view.key + '"]');
+            if (tr && !tr.querySelector(".tag.you")) {
+              var s = document.createElement("span");
+              s.className = "tag you";
+              s.textContent = "当前查看";
+              tr.querySelector(".rname").appendChild(s);
+            }
+          }
+        }
 
-  /* ---------- 倒计时 ---------- */
-  function digits(ms){
-    if(ms<=0) return null;
-    var t=Math.floor(ms/1000);
-    return { d:Math.floor(t/86400), h:Math.floor(t%86400/3600), m:Math.floor(t%3600/60), s:t%60 };
-  }
-  function pad(n){ return String(n).padStart(2,'0'); }
-  function shortCd(ms){
-    if(ms<=0) return '已开放';
-    var t=Math.floor(ms/1000), d=Math.floor(t/86400), h=Math.floor(t%86400/3600), m=Math.floor(t%3600/60);
-    return '还有 '+(d?d+'天 ':'')+pad(h)+':'+pad(m);
-  }
-  var card=document.getElementById('mainCard');
-  function tick(){
-    var now=Date.now(), x=digits(view.utc-now);
-    if(x){
-      card.classList.remove('live');
-      document.getElementById('d').textContent=pad(x.d);
-      document.getElementById('h').textContent=pad(x.h);
-      document.getElementById('m').textContent=pad(x.m);
-      document.getElementById('s').textContent=pad(x.s);
-    } else {
-      card.classList.add('live');
-      document.getElementById('unlockedSub').textContent='解锁时刻 '+fmtDate(view.utc,view.tz)+'（当地时间）已到达。';
-    }
-    document.getElementById('cdFirst').textContent=shortCd(FIRST-now);
-    document.getElementById('cdLast').textContent=shortCd(LAST-now);
-    document.getElementById('cdPreload').textContent=shortCd(PRELOAD_BJ-now);
+        /* ---------- 倒计时 ---------- */
+        function digits(ms) {
+          if (ms <= 0) return null;
+          var t = Math.floor(ms / 1000);
+          return {
+            d: Math.floor(t / 86400),
+            h: Math.floor((t % 86400) / 3600),
+            m: Math.floor((t % 3600) / 60),
+            s: t % 60,
+          };
+        }
+        function pad(n) {
+          return String(n).padStart(2, "0");
+        }
+        function shortCd(ms) {
+          if (ms <= 0) return "已开放";
+          var t = Math.floor(ms / 1000),
+            d = Math.floor(t / 86400),
+            h = Math.floor((t % 86400) / 3600),
+            m = Math.floor((t % 3600) / 60);
+          return "还有 " + (d ? d + "天 " : "") + pad(h) + ":" + pad(m);
+        }
+        var card = document.getElementById("mainCard");
+        function tick() {
+          var now = Date.now(),
+            x = digits(view.utc - now);
+          if (x) {
+            card.classList.remove("live");
+            document.getElementById("d").textContent = pad(x.d);
+            document.getElementById("h").textContent = pad(x.h);
+            document.getElementById("m").textContent = pad(x.m);
+            document.getElementById("s").textContent = pad(x.s);
+          } else {
+            card.classList.add("live");
+            document.getElementById("unlockedSub").textContent =
+              "解锁时刻 " + fmtDate(view.utc, view.tz) + "（当地时间）已到达。";
+          }
+          document.getElementById("cdFirst").textContent = shortCd(FIRST - now);
+          document.getElementById("cdLast").textContent = shortCd(LAST - now);
+          document.getElementById("cdPreload").textContent = shortCd(
+            PRELOAD_BJ - now,
+          );
 
-    Array.prototype.forEach.call(tbody.querySelectorAll('.st'),function(td){
-      var t=+td.dataset.utc;
-      if(t<=now){ td.className='st ok'; td.innerHTML='<span class="blink"></span>已解锁'; }
-      else { td.className='st'; td.textContent='等待 '+shortCd(t-now).replace('还有 ',''); }
-    });
-  }
+          Array.prototype.forEach.call(
+            tbody.querySelectorAll(".st"),
+            function (td) {
+              var t = +td.dataset.utc;
+              if (t <= now) {
+                td.className = "st ok";
+                td.innerHTML = '<span class="blink"></span>已解锁';
+              } else {
+                td.className = "st";
+                td.textContent =
+                  "等待 " + shortCd(t - now).replace("还有 ", "");
+              }
+            },
+          );
+        }
 
-  /* ---------- 加入日历 (.ics) ---------- */
-  function icsStamp(ts){ return new Date(ts).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,''); }
-  document.getElementById('icsBtn').addEventListener('click',function(){
-    var start=view.utc, end=start+60*60000;
-    var lines=[
-      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//GTA6 Unlock Clock//ZH','CALSCALE:GREGORIAN','METHOD:PUBLISH',
-      'BEGIN:VEVENT','UID:gta6-unlock-'+view.key+'@local','DTSTAMP:'+icsStamp(Date.now()),
-      'DTSTART:'+icsStamp(start),'DTEND:'+icsStamp(end),
-      'SUMMARY:GTA VI 解锁 - '+view.name,
-      'DESCRIPTION:2026年11月19日发售，PS5 / Xbox Series X|S。北京时间 '+fmtDate(start,'Asia/Shanghai')+' 解锁。以官方公告为准。',
-      'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:GTA VI 还有 30 分钟解锁','END:VALARM',
-      'END:VEVENT','END:VCALENDAR'
-    ];
-    var blob=new Blob([lines.join('\r\n')],{type:'text/calendar;charset=utf-8'});
-    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='GTA6-解锁提醒.ics'; a.click();
-    setTimeout(function(){URL.revokeObjectURL(a.href)},1500);
-    var b=document.getElementById('icsBtn'), old=b.innerHTML; b.textContent='已下载日历文件';
-    setTimeout(function(){b.innerHTML=old},1800);
-  });
+        /* ---------- 加入日历 (.ics) ---------- */
+        function icsStamp(ts) {
+          return new Date(ts)
+            .toISOString()
+            .replace(/[-:]/g, "")
+            .replace(/\.\d{3}/, "");
+        }
+        document
+          .getElementById("icsBtn")
+          .addEventListener("click", function () {
+            var start = view.utc,
+              end = start + 60 * 60000;
+            var lines = [
+              "BEGIN:VCALENDAR",
+              "VERSION:2.0",
+              "PRODID:-//GTA6 Unlock Clock//ZH",
+              "CALSCALE:GREGORIAN",
+              "METHOD:PUBLISH",
+              "BEGIN:VEVENT",
+              "UID:gta6-unlock-" + view.key + "@local",
+              "DTSTAMP:" + icsStamp(Date.now()),
+              "DTSTART:" + icsStamp(start),
+              "DTEND:" + icsStamp(end),
+              "SUMMARY:GTA VI 解锁 - " + view.name,
+              "DESCRIPTION:2026年11月19日发售，PS5 / Xbox Series X|S。北京时间 " +
+                fmtDate(start, "Asia/Shanghai") +
+                " 解锁。以官方公告为准。",
+              "BEGIN:VALARM",
+              "TRIGGER:-PT30M",
+              "ACTION:DISPLAY",
+              "DESCRIPTION:GTA VI 还有 30 分钟解锁",
+              "END:VALARM",
+              "END:VEVENT",
+              "END:VCALENDAR",
+            ];
+            var blob = new Blob([lines.join("\r\n")], {
+              type: "text/calendar;charset=utf-8",
+            });
+            var a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "GTA6-解锁提醒.ics";
+            a.click();
+            setTimeout(function () {
+              URL.revokeObjectURL(a.href);
+            }, 1500);
+            var b = document.getElementById("icsBtn"),
+              old = b.innerHTML;
+            b.textContent = "已下载日历文件";
+            setTimeout(function () {
+              b.innerHTML = old;
+            }, 1800);
+          });
 
-  /* ---------- 复制链接 ---------- */
-  document.getElementById('copyBtn').addEventListener('click',function(){
-    var b=document.getElementById('copyBtn'), old=b.innerHTML;
-    var done=function(){ b.textContent='链接已复制'; setTimeout(function(){b.innerHTML=old},1800); };
-    var fallback=function(){
-      var t=document.createElement('textarea'); t.value=location.href; document.body.appendChild(t); t.select();
-      try{document.execCommand('copy');done()}catch(e){b.textContent='请手动复制地址栏';setTimeout(function(){b.innerHTML=old},1800)}
-      document.body.removeChild(t);
-    };
-    if(navigator.clipboard && window.isSecureContext){
-      navigator.clipboard.writeText(location.href).then(done,fallback);
-    } else { fallback(); }
-  });
+        /* ---------- 复制链接 ---------- */
+        document
+          .getElementById("copyBtn")
+          .addEventListener("click", function () {
+            var b = document.getElementById("copyBtn"),
+              old = b.innerHTML;
+            var done = function () {
+              b.textContent = "链接已复制";
+              setTimeout(function () {
+                b.innerHTML = old;
+              }, 1800);
+            };
+            var fallback = function () {
+              var t = document.createElement("textarea");
+              t.value = location.href;
+              document.body.appendChild(t);
+              t.select();
+              try {
+                document.execCommand("copy");
+                done();
+              } catch (e) {
+                b.textContent = "请手动复制地址栏";
+                setTimeout(function () {
+                  b.innerHTML = old;
+                }, 1800);
+              }
+              document.body.removeChild(t);
+            };
+            if (navigator.clipboard && window.isSecureContext) {
+              navigator.clipboard.writeText(location.href).then(done, fallback);
+            } else {
+              fallback();
+            }
+          });
 
-  renderStatic();
-  tick();
-  setInterval(tick,1000);
-})();
-</script>
-<script>
-/* Ad slot renderer: only creates <ins> for slots that have a real ad unit ID. */
-(function(){
-  var cfg = window.GTA6_ADS;
-  if(!cfg || !cfg.slots) return;
-  Object.keys(cfg.slots).forEach(function(pos){
-    var slot = String(cfg.slots[pos] || '').trim();
-    var box = document.querySelector('.adslot[data-pos="'+pos+'"]');
-    if(!box || !/^\d{8,}$/.test(slot)) return;
-    var ins = document.createElement('ins');
-    ins.className = 'adsbygoogle';
-    ins.style.display = 'block';
-    ins.setAttribute('data-ad-client', cfg.client);
-    ins.setAttribute('data-ad-slot', slot);
-    ins.setAttribute('data-ad-format', 'auto');
-    ins.setAttribute('data-full-width-responsive', 'true');
-    box.appendChild(ins);
-    box.classList.add('active');
-    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); }
-    catch(e){}
-  });
-})();
-</script>
-</body>
+        renderStatic();
+        tick();
+        setInterval(tick, 1000);
+      })();
+    </script>
+    <script>
+      /* Ad slot renderer: only creates <ins> for slots that have a real ad unit ID. */
+      (function () {
+        var cfg = window.GTA6_ADS;
+        if (!cfg || !cfg.slots) return;
+        Object.keys(cfg.slots).forEach(function (pos) {
+          var slot = String(cfg.slots[pos] || "").trim();
+          var box = document.querySelector('.adslot[data-pos="' + pos + '"]');
+          if (!box || !/^\d{8,}$/.test(slot)) return;
+          var ins = document.createElement("ins");
+          ins.className = "adsbygoogle";
+          ins.style.display = "block";
+          ins.setAttribute("data-ad-client", cfg.client);
+          ins.setAttribute("data-ad-slot", slot);
+          ins.setAttribute("data-ad-format", "auto");
+          ins.setAttribute("data-full-width-responsive", "true");
+          box.appendChild(ins);
+          box.classList.add("active");
+          try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          } catch (e) {}
+        });
+      })();
+    </script>
+  </body>
 </html>
