@@ -1,90 +1,831 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>隐私政策 · Privacy Policy | GTA6 解锁时刻</title>
-<meta name="description" content="Privacy policy for the GTA 6 unlock countdown site, including Google AdSense and cookie disclosures.">
-<meta name="robots" content="noindex,follow">
-<style>
-  :root{--bg:#0b0716;--line:rgba(255,255,255,.11);--text:#f6f2ff;--muted:#a99fc4;--muted2:#7c729a;--pink:#ff3d81;--orange:#ff9a4d;--cyan:#3fd8ff}
-  *{box-sizing:border-box}
-  body{margin:0;font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--text);background:
-    radial-gradient(800px 500px at 10% -10%,rgba(139,107,255,.28),transparent 60%),
-    radial-gradient(700px 500px at 95% 5%,rgba(255,61,129,.20),transparent 60%),
-    linear-gradient(180deg,#0b0716,#120b22 60%,#0a0714);
-    min-height:100vh;-webkit-font-smoothing:antialiased}
-  .wrap{width:min(820px,92vw);margin:0 auto;padding:48px 0 70px}
-  .back{display:inline-flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none;font-size:12.5px;margin-bottom:28px}
-  .back:hover{color:var(--text)}
-  h1{font-size:clamp(28px,5vw,44px);letter-spacing:-.035em;margin:0 0 8px}
-  .sub{color:var(--muted2);font-size:12.5px;margin-bottom:34px}
-  .lang{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:16px;padding:26px 28px;margin-bottom:18px}
-  .lang h2{font-size:16px;margin:0 0 6px;background:linear-gradient(100deg,var(--pink),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lang h3{font-size:13.5px;margin:22px 0 7px}
-  .lang p,.lang li{color:var(--muted);font-size:13px;line-height:1.9;margin:0 0 10px}
-  .lang ul{padding-left:20px;margin:0 0 10px}
-  .lang a{color:var(--cyan);text-decoration:underline;text-underline-offset:2px}
-  footer{margin-top:30px;color:var(--muted2);font-size:11.5px;line-height:1.9}
-  footer a{color:var(--muted)}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <a class="back" href="gta6-countdown.html">← 返回倒计时页 / Back to countdown</a>
-  <h1>隐私政策 <span style="color:var(--muted2);font-weight:400">/ Privacy Policy</span></h1>
-  <div class="sub">最后更新 Last updated: 2026-11-04</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>隐私政策 · Privacy Policy | GTA 6 倒计时与本站全部工具</title>
+    <meta
+      name="description"
+      content="g-uno.top 及全部子域的隐私政策：收集与不收集哪些数据、各工具的本地存储、Cloudflare 日志、Google AdSense 与第三方 Cookie、个性化广告关闭方式、EEA/UK 同意机制、用户权利与联系方式。中英双语。"
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://gta6count.g-uno.top/privacy.html" />
+    <meta name="theme-color" content="#0b0716" />
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8335716084958178"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      :root {
+        --bg: #0b0716;
+        --text: #f6f2ff;
+        --muted: #a99fc4;
+        --line: rgba(255, 255, 255, 0.11);
+        --cyan: #3fd8ff;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial,
+          sans-serif;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      .bg-grid {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.026) 1px,
+            transparent 1px
+          );
+        background-size: 64px 64px;
+        mask-image: radial-gradient(
+          ellipse 90% 60% at 50% 0%,
+          #000 20%,
+          transparent 78%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse 90% 60% at 50% 0%,
+          #000 20%,
+          transparent 78%
+        );
+      }
+      .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 0 22px 60px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 22px 0 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        text-decoration: none;
+        color: var(--text);
+        font-size: 16px;
+        font-weight: 650;
+      }
+      .brand svg {
+        width: 24px;
+        height: 24px;
+      }
+      .back {
+        font-size: 12.5px;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 13px;
+        transition: 0.2s;
+      }
+      .back:hover {
+        color: var(--cyan);
+        border-color: rgba(94, 230, 255, 0.45);
+      }
+      h1 {
+        font-size: clamp(26px, 4.4vw, 36px);
+        line-height: 1.25;
+        letter-spacing: -0.6px;
+        margin: 44px 0 8px;
+        font-weight: 750;
+      }
+      .meta {
+        font-size: 12.5px;
+        color: #6f7789;
+        margin-bottom: 22px;
+      }
+      p {
+        font-size: 14.5px;
+        color: #b7bdcc;
+        margin-bottom: 14px;
+      }
+      a {
+        color: var(--cyan);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h2 {
+        font-size: 17px;
+        margin: 36px 0 10px;
+        font-weight: 650;
+        letter-spacing: -0.2px;
+      }
+      h2::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 15px;
+        background: var(--cyan);
+        border-radius: 2px;
+        margin-right: 10px;
+        vertical-align: -2px;
+        opacity: 0.8;
+      }
+      h3 {
+        font-size: 14.5px;
+        margin: 22px 0 6px;
+        font-weight: 620;
+        color: #dfe5f1;
+      }
+      ul {
+        margin: 0 0 14px 20px;
+      }
+      li {
+        font-size: 14px;
+        color: #b7bdcc;
+        margin-bottom: 6px;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        background: rgba(255, 255, 255, 0.07);
+        padding: 1px 5px;
+        border-radius: 4px;
+        color: #c9d4e6;
+      }
+      .toc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin: 0 0 26px;
+      }
+      .toc a {
+        font-size: 12px;
+        padding: 5px 11px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+      }
+      .toc a:hover {
+        color: var(--cyan);
+        border-color: rgba(94, 230, 255, 0.45);
+        text-decoration: none;
+      }
+      .note {
+        border-left: 3px solid rgba(94, 230, 255, 0.5);
+        background: rgba(94, 230, 255, 0.05);
+        padding: 13px 16px;
+        border-radius: 0 8px 8px 0;
+        font-size: 13.5px;
+        color: #9aa3b6;
+        margin: 20px 0;
+      }
+      .warn {
+        border-left: 3px solid rgba(255, 200, 87, 0.55);
+        background: rgba(255, 200, 87, 0.05);
+        padding: 13px 16px;
+        border-radius: 0 8px 8px 0;
+        font-size: 13.5px;
+        color: #b9b1a0;
+        margin: 20px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0 18px;
+        font-size: 13px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--line);
+        color: #b7bdcc;
+        vertical-align: top;
+      }
+      th {
+        color: #8d95a8;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        background: rgba(255, 255, 255, 0.025);
+      }
+      td b {
+        color: #dfe5f1;
+        font-weight: 620;
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+        font-size: 12px;
+        color: #6f7789;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+      }
+      footer a {
+        color: #8f98ab;
+      }
+      .sep {
+        color: #3f4757;
+      }
+      @media (max-width: 560px) {
+        .wrap {
+          padding: 0 16px 44px;
+        }
+        h1 {
+          margin-top: 34px;
+        }
+        table {
+          font-size: 12px;
+        }
+        th,
+        td {
+          padding: 7px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="wrap">
+      <header>
+        <a class="brand" href="gta6-countdown.html">
+          <svg viewBox="0 0 64 64" fill="none">
+            <rect
+              x="2"
+              y="2"
+              width="60"
+              height="60"
+              rx="14"
+              stroke="rgba(94,230,255,.55)"
+              stroke-width="2.5"
+            />
+            <path
+              d="M24 44V26l17-4.4v17"
+              stroke="#5ee6ff"
+              stroke-width="3.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="21" cy="44" r="4.4" fill="#ff5ea8" />
+            <circle cx="38" cy="39" r="4.4" fill="#5ee6ff" />
+          </svg>
+          g-uno.top
+        </a>
+        <a class="back" href="gta6-countdown.html">← 返回倒计时页</a>
+      </header>
 
-  <div class="lang">
-    <h2>中文</h2>
-    <p>本站是一个非官方的《GTA VI》全球解锁倒计时工具，与 Rockstar Games、Take-Two Interactive 无任何关联。</p>
+      <h1>
+        隐私政策
+        <span style="color: #6f7789; font-weight: 400">/ Privacy Policy</span>
+      </h1>
+      <div class="meta">
+        最后更新 Last updated: 2026-11-12 · 本站与 g-uno.top 全部子域通用
+      </div>
 
-    <h3>时区与本地计算</h3>
-    <p>页面通过浏览器的 <code>Intl</code> 接口读取你设备的时区，用于显示对应的解锁时间。所有计算都在本地完成，我们不会收集、存储或上传你的时区、IP 地址或任何个人身份信息。页面也不使用登录、表单或分析型 Cookie。</p>
+      <nav class="toc">
+        <a href="#scope">适用范围</a>
+        <a href="#who">运营者</a>
+        <a href="#collect">收集什么</a>
+        <a href="#local">本地存储</a>
+        <a href="#cookie">Cookie</a>
+        <a href="#ads">广告</a>
+        <a href="#logs">服务器日志</a>
+        <a href="#third">第三方</a>
+        <a href="#rights">你的权利</a>
+        <a href="#contact">联系</a>
+      </nav>
 
-    <h3>Google AdSense 与 Cookie</h3>
-    <p>本站展示 Google AdSense 广告。Google 作为第三方供应商，使用 Cookie 或类似技术，根据你此前访问本站或其他网站的记录来投放广告。Google 使用广告 Cookie，使其及其合作伙伴能够向你提供个性化广告。</p>
-    <ul>
-      <li>你可以在 <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google 广告设置</a> 中关闭个性化广告。</li>
-      <li>也可以访问 <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a> 退出第三方供应商的个性化广告。</li>
-      <li>了解更多：<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 如何使用来自使用其服务的网站的数据</a>、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隐私权政策</a>。</li>
-    </ul>
-    <p>若你位于欧洲经济区（EEA）、英国或瑞士，Google 会依据你的同意状态决定是否展示个性化广告。你随时可在浏览器设置中删除或阻止 Cookie，这可能影响广告与部分页面功能的显示。</p>
+      <h2 id="scope">1. 适用范围</h2>
+      <p>
+        本政策适用于
+        <a href="https://g-uno.top/">g-uno.top</a>
+        及其全部子域名下的所有页面与工具，无论中英文版本。目前包括：
+      </p>
+      <table>
+        <tr>
+          <th>站点</th>
+          <th>内容</th>
+          <th>数据类型</th>
+        </tr>
+        <tr>
+          <td><b>g-uno.top</b></td>
+          <td>本站导航首页、关于、联系、本政策页</td>
+          <td>仅访问日志</td>
+        </tr>
+        <tr>
+          <td><b>oilprice</b></td>
+          <td>全国汽柴油零售限价查询、调价窗口</td>
+          <td>仅访问日志（不记录你查询的省份）</td>
+        </tr>
+        <tr>
+          <td><b>pbzmissables</b></td>
+          <td>《影之刃零》易错过内容清单</td>
+          <td>勾选进度存本地</td>
+        </tr>
+        <tr>
+          <td><b>gta6count</b></td>
+          <td>GTA 6 全时区解锁倒计时</td>
+          <td>时区偏好存本地</td>
+        </tr>
+        <tr>
+          <td><b>unlockmusic</b></td>
+          <td>音乐文件解密工具</td>
+          <td><b>文件不上传，仅本地处理</b></td>
+        </tr>
+        <tr>
+          <td><b>habibi</b></td>
+          <td>美国网络热词词典</td>
+          <td>仅访问日志</td>
+        </tr>
+      </table>
+      <p>
+        各站点共享同一套技术栈与同一份政策。若某个工具将来引入新的数据处理方式（例如需要上传文件的服务），会在上线前更新本页并在该工具页面单独提示。
+      </p>
 
-    <h3>第三方链接</h3>
-    <p>本站包含指向 Google、Rockstar 相关报道等外部链接，这些网站有各自的隐私政策，本站对其内容不承担责任。</p>
+      <h2 id="who">2. 谁在运营</h2>
+      <p>
+        本站是个人自建的小工具集合，不是公司，也没有编辑部。就个人数据保护而言，运营者即本政策的责任方；所有与隐私相关的事宜都可直接联系（见第
+        10 节）。站点不含账号体系，因此我们无法、也不会通过任何登录信息识别你。
+      </p>
 
-    <h3>联系我们</h3>
-    <p>如有隐私、广告或数据相关疑问，请发送邮件至 <a href="mailto:happygc913@gmail.com">happygc913@gmail.com</a>，我们会尽快回复。</p>
-  </div>
+      <h2 id="collect">3. 我们收集什么，不收集什么</h2>
+      <p><b>不收集的内容：</b></p>
+      <ul>
+        <li>
+          没有注册、登录、评论、留言板，<b>不收集姓名、邮箱、手机号、身份证件</b>；
+        </li>
+        <li>没有订阅列表、没有营销邮件、没有短信；</li>
+        <li>没有支付环节，不接触任何银行卡或账单信息；</li>
+        <li>
+          不使用第三方流量分析脚本（如 Google Analytics、Meta
+          Pixel），也不做跨站用户画像；
+        </li>
+        <li>
+          工具中打开的文件（UnlockMusic
+          的音乐文件等）<b>只在你的浏览器内解密，不会上传</b>——站点没有能接收这些文件的服务端。
+        </li>
+      </ul>
+      <p><b>会产生的数据：</b></p>
+      <table>
+        <tr>
+          <th>类型</th>
+          <th>来源</th>
+          <th>用途</th>
+          <th>保留</th>
+        </tr>
+        <tr>
+          <td>访问技术日志（IP、UA、路径、时间、来源页）</td>
+          <td>Cloudflare 边缘节点自动记录</td>
+          <td>安全防护、限流、故障排查、粗略流量统计</td>
+          <td>依 Cloudflare 自身政策</td>
+        </tr>
+        <tr>
+          <td>本地偏好（localStorage）</td>
+          <td>你的浏览器写入</td>
+          <td>记住勾选进度、时区对照方式</td>
+          <td>保存在你设备上，直到你清除</td>
+        </tr>
+        <tr>
+          <td>广告 Cookie</td>
+          <td>Google AdSense 写入</td>
+          <td>广告投放与频次控制</td>
+          <td>依 Google 政策</td>
+        </tr>
+      </table>
 
-  <div class="lang" lang="en">
-    <h2>English</h2>
-    <p>This site is an unofficial GTA VI global unlock countdown tool. It is not affiliated with Rockstar Games or Take-Two Interactive.</p>
+      <h2 id="local">4. 保存在你浏览器里的数据</h2>
+      <p>几个工具会把少量偏好存在 localStorage（不是 Cookie，也不会上传）：</p>
+      <table>
+        <tr>
+          <th>工具</th>
+          <th>存了什么</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td>pbzmissables</td>
+          <td>清单勾选状态</td>
+          <td>刷新或下次打开时恢复进度</td>
+        </tr>
+        <tr>
+          <td>gta6count</td>
+          <td>对照时钟偏好（我的时间 / UTC / 北京时间）</td>
+          <td>记住你上次选的对照方式</td>
+        </tr>
+        <tr>
+          <td>其他工具</td>
+          <td>无</td>
+          <td>—</td>
+        </tr>
+      </table>
+      <p>
+        这些数据只存在于你的设备，我们看不到，也无法读取。清除浏览器站点数据即可删除；清掉之后功能照常，只是需要重新勾选。
+      </p>
 
-    <h3>Time zone and local computation</h3>
-    <p>The page reads your device's time zone through the browser's <code>Intl</code> API to display your local unlock time. All calculations happen locally. We do not collect, store or upload your time zone, IP address or any personally identifiable information. There are no logins, forms or analytics cookies.</p>
+      <h2 id="cookie">5. Cookie 与同类技术</h2>
+      <p>
+        本站<b>自身不设置任何 Cookie</b
+        >：没有会话、没有登录态、没有自建统计。页面上出现的 Cookie
+        全部来自第三方广告服务（Google AdSense），由 Google
+        在其域下写入，我们无法读取其内容。
+      </p>
+      <p>
+        你可以在浏览器设置中随时删除或阻止
+        Cookie。阻止后页面主体功能不受影响，但广告可能不再个性化，或出现重复展示。
+      </p>
 
-    <h3>Google AdSense and cookies</h3>
-    <p>This site displays Google AdSense ads. Google, as a third-party vendor, uses cookies or similar technologies to serve ads based on a user's prior visits to this or other websites. Google's use of advertising cookies enables it and its partners to serve personalised ads to you.</p>
-    <ul>
-      <li>You may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</li>
-      <li>You may also opt out of third-party vendors' use of cookies at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>.</li>
-      <li>Learn more: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google uses data from sites that use its services</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
-    </ul>
-    <p>If you are in the EEA, the UK or Switzerland, Google will apply your consent choices to personalised advertising. You can delete or block cookies in your browser at any time; this may affect how ads and some page features appear.</p>
+      <h2 id="ads">6. 广告与 Google AdSense</h2>
+      <p>
+        本站通过 <b>Google AdSense</b> 展示广告。Google 作为第三方供应商，会使用
+        Cookie 根据你此前对本站或其他网站的访问投放广告。
+      </p>
+      <ul>
+        <li>
+          Google 使用广告 Cookie，使其及其合作伙伴能基于你的访问向你展示广告；
+        </li>
+        <li>
+          可在
+          <a
+            href="https://www.google.com/settings/ads"
+            target="_blank"
+            rel="noopener"
+            >Google 广告设置</a
+          >
+          关闭个性化广告；
+        </li>
+        <li>
+          也可在
+          <a
+            href="https://www.aboutads.info/choices/"
+            target="_blank"
+            rel="noopener"
+            >aboutads.info</a
+          >
+          或
+          <a
+            href="https://www.youronlinechoices.eu/"
+            target="_blank"
+            rel="noopener"
+            >Your Online Choices</a
+          >
+          统一管理第三方广告 Cookie；
+        </li>
+        <li>关闭个性化后<b>仍会看到广告</b>，只是不再基于你的浏览行为；</li>
+        <li>
+          Google 如何使用这些数据：<a
+            href="https://policies.google.com/technologies/partner-sites"
+            target="_blank"
+            rel="noopener"
+            >合作伙伴网站说明</a
+          >、<a
+            href="https://policies.google.com/technologies/ads"
+            target="_blank"
+            rel="noopener"
+            >广告技术说明</a
+          >、<a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener"
+            >Google 隐私权政策</a
+          >。
+        </li>
+      </ul>
+      <p>
+        广告由 Google
+        直接投放、直接计费，我们不掌握点击数据、不接触广告主，也不会把任何信息卖给第三方——站点没有可卖的数据。
+      </p>
+      <div class="note">
+        若你位于欧洲经济区（EEA）、英国或瑞士，Google
+        会先依据当地法规征求你的同意，再决定是否投放个性化广告；你可以随时通过页面上的同意提示或上述设置更改选择。
+      </div>
 
-    <h3>Third-party links</h3>
-    <p>This site links to external resources such as Google and games press coverage. Those sites have their own privacy policies and we are not responsible for their content.</p>
+      <h2 id="logs">7. 服务器日志与保留</h2>
+      <p>
+        本站托管在 Cloudflare，请求会经过其全球边缘节点。Cloudflare
+        会自动记录常规技术日志（IP
+        地址、User-Agent、请求路径、时间戳、来源页），用于 DDoS
+        防护、限流和故障排查，保留期限取决于 Cloudflare
+        的政策与我们后台可查的时间范围。我们不会把这些日志与任何个人身份关联，也不会用于广告定向。
+      </p>
+      <p>
+        由于日志位于 Cloudflare
+        的全球网络，你的请求可能由你所在地区附近的节点处理，这一过程可能涉及跨境传输。
+      </p>
 
-    <h3>Contact</h3>
-    <p>For any privacy, advertising or data-related questions, please email <a href="mailto:happygc913@gmail.com">happygc913@gmail.com</a>. We aim to respond as soon as possible.</p>
-  </div>
+      <h2 id="third">8. 第三方链接与外部服务</h2>
+      <p>
+        站内会链接到外部资源，例如
+        Google、GitHub、游戏官方公告、公开油价数据来源等。这些网站有自己的隐私政策与
+        Cookie
+        行为，我们无法控制，也不对其内容或数据处理负责；离开本站后请以对方页面为准。
+      </p>
+      <p>
+        通过
+        <a
+          href="https://github.com/G-Uno-Web/g-uno/issues"
+          target="_blank"
+          rel="noopener"
+          >GitHub Issues</a
+        >
+        反馈问题时，你提交的内容（包括 GitHub 账号、文字、截图）受 GitHub
+        的服务条款与隐私政策约束，且<b>是公开可见的</b>——请不要在公开 issue
+        里填写邮箱、订单号等个人信息。
+      </p>
 
-  <footer>
-    返回页面：<a href="gta6-countdown.html">中文版倒计时</a> · <a href="gta6-countdown-en.html">English countdown</a><br>
-    联系邮箱 Contact: <a href="mailto:happygc913@gmail.com" style="color:var(--cyan)">happygc913@gmail.com</a> · 本政策适用于本站全部页面。
-  </footer>
-</div>
-</body>
+      <h2 id="rights">9. 你的权利</h2>
+      <p>
+        依据 GDPR、UK GDPR、CCPA
+        等法规，你可能拥有访问、更正、删除、限制处理、反对处理以及数据可携带的权利。就本站而言：
+      </p>
+      <ul>
+        <li>
+          我们没有你的账号与身份信息，通常<b>没有可供导出或删除的个人数据</b>；
+        </li>
+        <li>本地偏好由你自行清除浏览器数据即可删除，无需向我们申请；</li>
+        <li>
+          广告相关的数据由 Google 控制，需通过上文链接在 Google 侧行使权利；
+        </li>
+        <li>
+          若你认为某项处理不当，可来信说明，我们会核查并在合理期限内答复；你也可以向所在地的数据保护机构投诉。
+        </li>
+      </ul>
+      <div class="warn">
+        本站不以 13
+        岁以下儿童为目标受众，也不会主动收集儿童的个人信息。若你是家长并认为孩子向我们提交了信息，请联系我们处理。
+      </div>
+
+      <h2 id="contact">10. 联系方式</h2>
+      <table>
+        <tr>
+          <th>用途</th>
+          <th>渠道</th>
+        </tr>
+        <tr>
+          <td>隐私、版权、广告相关</td>
+          <td>
+            <a href="mailto:happygc913@gmail.com">happygc913@gmail.com</a>
+          </td>
+        </tr>
+        <tr>
+          <td>公开的问题与建议</td>
+          <td>
+            <a
+              href="https://github.com/G-Uno-Web/g-uno/issues"
+              target="_blank"
+              rel="noopener"
+              >GitHub Issues</a
+            >
+          </td>
+        </tr>
+      </table>
+      <p>
+        <b>政策变更：</b
+        >本政策如有修改，会更新页面顶部日期；涉及数据处理方式的重大变化时，会在首页与相关工具页面提示。继续使用本站即视为接受更新后的版本。
+      </p>
+
+      <!-- ===== English ===== -->
+      <h2 id="en">Privacy Policy (English)</h2>
+      <p>
+        <b>Last updated: 2026-11-12.</b> This policy applies to
+        <a href="https://g-uno.top/">g-uno.top</a> and every page and tool on
+        its subdomains — the price lookup, the game checklist, the unlock
+        countdown, the music tool, the slang dictionary, and these informational
+        pages.
+      </p>
+
+      <h3>1. Who runs this site</h3>
+      <p>
+        This is a personal collection of small browser tools, not a company.
+        There are no accounts, so we cannot identify you through any login.
+      </p>
+
+      <h3>2. What we do not collect</h3>
+      <ul>
+        <li>
+          No sign-up, login or comments — no names, email addresses or phone
+          numbers;
+        </li>
+        <li>No mailing list, no marketing email, no SMS;</li>
+        <li>No payments, so no card or billing details;</li>
+        <li>
+          No third-party analytics scripts (no Google Analytics, no Meta Pixel)
+          and no cross-site profiling;
+        </li>
+        <li>
+          Files you open in tools such as UnlockMusic are
+          <b>decrypted locally in your browser and never uploaded</b> — there is
+          no server that could receive them.
+        </li>
+      </ul>
+
+      <h3>3. What is generated</h3>
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>Source</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>
+            Technical access logs (IP, user agent, path, timestamp, referrer)
+          </td>
+          <td>Cloudflare edge, automatically</td>
+          <td>Security, rate limiting, debugging, coarse traffic counts</td>
+        </tr>
+        <tr>
+          <td>Local preferences</td>
+          <td>Your browser's localStorage</td>
+          <td>Remember checklist progress and reference-clock choice</td>
+        </tr>
+        <tr>
+          <td>Advertising cookies</td>
+          <td>Google AdSense</td>
+          <td>Ad delivery and frequency capping</td>
+        </tr>
+      </table>
+
+      <h3>4. Data stored in your browser</h3>
+      <p>
+        Two tools keep small preferences in localStorage: the game checklist
+        stores which items you have ticked, and the countdown page remembers
+        whether you prefer your own clock, UTC or Beijing time. This stays on
+        your device and is not readable by us; clearing site data removes it.
+      </p>
+
+      <h3>5. Cookies</h3>
+      <p>
+        This site sets no cookies of its own — no sessions, no login state, no
+        self-hosted analytics. Any cookies you encounter come from Google's
+        advertising service and are written on Google's domains; we cannot read
+        them. Blocking cookies does not break the tools, though ads may become
+        non-personalised or repeat.
+      </p>
+
+      <h3>6. Advertising and Google AdSense</h3>
+      <p>
+        Ads are served by <b>Google AdSense</b>. Google, as a third-party
+        vendor, uses cookies to serve ads based on your prior visits to this and
+        other websites.
+      </p>
+      <ul>
+        <li>
+          Opt out of personalised advertising via
+          <a
+            href="https://www.google.com/settings/ads"
+            target="_blank"
+            rel="noopener"
+            >Google Ads Settings</a
+          >;
+        </li>
+        <li>
+          Manage third-party ad cookies at
+          <a
+            href="https://www.aboutads.info/choices/"
+            target="_blank"
+            rel="noopener"
+            >aboutads.info</a
+          >
+          or
+          <a
+            href="https://www.youronlinechoices.eu/"
+            target="_blank"
+            rel="noopener"
+            >Your Online Choices</a
+          >;
+        </li>
+        <li>Opting out does not remove ads, only their personalisation;</li>
+        <li>
+          How Google uses this data:
+          <a
+            href="https://policies.google.com/technologies/partner-sites"
+            target="_blank"
+            rel="noopener"
+            >partner sites notice</a
+          >,
+          <a
+            href="https://policies.google.com/technologies/ads"
+            target="_blank"
+            rel="noopener"
+            >ad technologies</a
+          >,
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener"
+            >Google Privacy Policy</a
+          >.
+        </li>
+      </ul>
+      <p>
+        Ads are served and billed by Google directly. We never see click-level
+        data, have no relationship with advertisers, and sell nothing — there is
+        no data here to sell.
+      </p>
+      <div class="note">
+        In the EEA, the UK and Switzerland, Google asks for your consent before
+        serving personalised ads, in line with local law. You can change that
+        choice at any time via the consent message or the settings above.
+      </div>
+
+      <h3>7. Server logs and retention</h3>
+      <p>
+        The site is hosted on Cloudflare, which keeps standard technical logs
+        for DDoS mitigation, rate limiting and troubleshooting, retained under
+        its own policy. We do not link these logs to any identity and do not use
+        them for ad targeting. Because Cloudflare's network is global, requests
+        may be handled by an edge node near you, which can involve cross-border
+        transfer.
+      </p>
+
+      <h3>8. Third-party links</h3>
+      <p>
+        Pages link to external resources such as Google, GitHub, official game
+        announcements and public fuel-price data. Those sites have their own
+        policies and we are not responsible for them. Feedback submitted through
+        <a
+          href="https://github.com/G-Uno-Web/g-uno/issues"
+          target="_blank"
+          rel="noopener"
+          >GitHub Issues</a
+        >
+        is governed by GitHub's terms and is <b>publicly visible</b> — please do
+        not post personal details there.
+      </p>
+
+      <h3>9. Your rights</h3>
+      <ul>
+        <li>
+          We hold no account or identity data, so there is usually nothing to
+          export or delete;
+        </li>
+        <li>
+          Local preferences are removed by clearing your browser data — no
+          request needed;
+        </li>
+        <li>
+          Advertising data is controlled by Google; exercise those rights
+          through the links above;
+        </li>
+        <li>
+          If you believe something is handled incorrectly, write to us and we
+          will look into it; you may also complain to your local data protection
+          authority.
+        </li>
+      </ul>
+      <p>
+        This site is not directed at children under 13 and does not knowingly
+        collect their personal information.
+      </p>
+
+      <h3>10. Contact</h3>
+      <p>
+        Privacy, copyright or advertising questions:
+        <a href="mailto:happygc913@gmail.com">happygc913@gmail.com</a>. Public
+        issues and suggestions:
+        <a
+          href="https://github.com/G-Uno-Web/g-uno/issues"
+          target="_blank"
+          rel="noopener"
+          >GitHub Issues</a
+        >.
+      </p>
+      <p>
+        Material changes to this policy will be reflected in the date at the top
+        of this page, and flagged on the homepage when significant.
+      </p>
+
+      <footer>
+        <span>© 2026 g-uno.top</span>
+        <span class="sep">·</span>
+        <a href="gta6-countdown.html">中文倒计时</a>
+        <span class="sep">·</span>
+        <a href="https://g-uno.top/about.html">关于</a>
+        <span class="sep">·</span>
+        <a href="https://g-uno.top/contact.html">联系</a>
+        <span class="sep">·</span>
+        <a
+          href="https://github.com/G-Uno-Web/g-uno/issues"
+          target="_blank"
+          rel="noopener"
+          >GitHub 反馈</a
+        >
+      </footer>
+    </div>
+  </body>
 </html>
